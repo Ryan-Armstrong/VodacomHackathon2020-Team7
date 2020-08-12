@@ -1,3 +1,14 @@
 {
-  
+  "debit": {
+    "title": "Debit Card",
+    "description": ""
+  },
+  "credit": {
+    "title": "Credit Card",
+    "description": ""
+  },
+  "cheque": {
+    "title": "Cheque Card",
+    "description": ""
+  }
 }

@@ -1,53 +1,53 @@
 {
   "1": {
     "method": "partial",
-    "total_amount": 41.00,
+    "total_amount": 52.50,
     "card": "1",
     "created_at": "2020-07-03",
     "expires_at": "2020-08-03",
     "state": "expired",
     "advance": {
-      "amount": "",
-      "due_date": "",
-      "paid": ""
+      "amount": 25.00,
+      "due_date": "2020-07-10",
+      "paid": true
     },
     "pay_now": {
-      "amount": "",
-      "bonus": ""
+      "amount": 25.00,
+      "bonus": 2.50
     }
   },
   "2": {
     "method": "advance",
-    "total_amount": 34.00,
+    "total_amount": 50.00,
     "card": "3",
     "created_at": "2020-07-09",
     "expires_at": "2020-08-09",
     "state": "redeemed",
     "advance": {
-      "amount": "",
-      "due_date": "",
-      "paid": ""
+      "amount": 50.00,
+      "due_date": "2020-07-23",
+      "paid": false
     },
     "pay_now": {
-      "amount": "",
-      "bonus": ""
+      "amount": 0.00,
+      "bonus": 0.00
     }
   },
   "3": {
     "method": "partial",
-    "total_amount": 173.00,
+    "total_amount": 175.50,
     "card": "2",
     "created_at": "2020-07-18",
     "expires_at": "2020-08-18",
     "state": "payment_succesful",
     "advance": {
-      "amount": "",
-      "due_date": "",
-      "paid": ""
+      "amount": 50.00,
+      "due_date": "2020-07-25",
+      "paid": true
     },
     "pay_now": {
-      "amount": "",
-      "bonus": ""
+      "amount": 125.00,
+      "bonus": 12.50
     }
   },
   "4": {
@@ -58,30 +58,30 @@
     "expires_at": "2020-08-24",
     "state": "payment_failed",
     "advance": {
-      "amount": "",
-      "due_date": "",
-      "paid": ""
+      "amount": 0.00,
+      "due_date": null,
+      "paid": true
     },
     "pay_now": {
-      "amount": "",
-      "bonus": ""
+      "amount": 50.00,
+      "bonus": 5.00
     }
   },
   "5": {
     "method": "advance",
-    "total_amount": 20.00,
+    "total_amount": 25.00,
     "card": "2",
     "created_at": "2020-08-12",
     "expires_at": "2020-09-12",
-    "state": "",
+    "state": "payment_succesful",
     "advance": {
-      "amount": "",
-      "due_date": "",
-      "paid": ""
+      "amount": 25.00,
+      "due_date": "2020-09-02",
+      "paid": true
     },
     "pay_now": {
-      "amount": "",
-      "bonus": ""
+      "amount": 0.00,
+      "bonus": 0.00
     }
   }
 }

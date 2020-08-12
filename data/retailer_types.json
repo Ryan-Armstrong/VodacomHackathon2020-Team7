@@ -1,27 +1,27 @@
 {
   "take_outs": {
     "title": "Take Outs",
-    "icon": "",
+    "icon": "./assets/retailer_types/take_outs.svg",
     "visible": true
   },
   "groceries": {
     "title": "Groceries",
-    "icon": "",
+    "icon": "./assets/retailer_types/groceries.svg",
     "visible": true
   },
   "online_shopping": {
     "title": "Online Shopping",
-    "icon": "",
+    "icon": "./assets/retailer_types/online_shopping.svg",
     "visible": true
   },
   "transportation": {
     "title": "Transportation",
-    "icon": "",
+    "icon": "./assets/retailer_types/transportation.svg",
     "visible": false
   },
   "accomodation": {
     "title": "Accomodation",
-    "icon": "",
+    "icon": "./assets/retailer_types/accomodation.svg",
     "visible": false
   }
 }

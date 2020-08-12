@@ -1,14 +1,18 @@
 {
   "payment_failed": {
-
+    "title": "Payment Failed",
+    "description": "The payment for this voucher has failed."
   },
   "payment_succesful": {
-
+    "title": "Payment Succesful",
+    "description": "The payment for this voucher was succesful."
   },
   "redeemed": {
-    
+    "title": "Voucher Redeemed",
+    "description": "This voucher has been redeemed."
   },
   "expired": {
-    
+    "title": "Voucher Expired",
+    "description": "This voucher has expired."
   }
 }
