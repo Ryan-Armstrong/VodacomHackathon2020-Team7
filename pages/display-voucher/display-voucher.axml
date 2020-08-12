@@ -1,3 +1,4 @@
 <view>
-  New Page
+<view>display voucher</view>
+   <view a:if="qrImageUrl"><image mode="aspectFit" src="{{qrImageUrl}}"/></view>
 </view>

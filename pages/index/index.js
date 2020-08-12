@@ -33,6 +33,8 @@ Page({
     };
   },
   next(){
+    console.log('here');
+    
     my.navigateTo({ url: '../retailers/retailers' });
   }
 });

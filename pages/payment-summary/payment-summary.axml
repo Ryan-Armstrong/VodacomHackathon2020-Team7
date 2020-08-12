@@ -1,3 +1,4 @@
 <view>
-  <button size="default" type="primary"  onButtonClick="next">Next</button>
+<view>payment summary</view>
+  <button size="default" type="primary"  onTap="next">Next</button>
 </view>
