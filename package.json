@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mini-antui": "^0.4.35",
+    "qrcode-generator": "^1.4.4"
+  }
+}

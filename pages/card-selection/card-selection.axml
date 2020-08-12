@@ -1,4 +1,3 @@
 <view>
-  
   <button size="default" type="primary"  onButtonClick="next">Next</button>
 </view>

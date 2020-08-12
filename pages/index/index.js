@@ -32,4 +32,7 @@ Page({
       path: 'pages/index/index',
     };
   },
+  next(){
+    my.navigateTo({ url: '../retailers/retailers' });
+  }
 });
