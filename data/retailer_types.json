@@ -1,0 +1,27 @@
+{
+  "take_outs": {
+    "title": "Take Outs",
+    "icon": "",
+    "visible": true
+  },
+  "groceries": {
+    "title": "Groceries",
+    "icon": "",
+    "visible": true
+  },
+  "online_shopping": {
+    "title": "Online Shopping",
+    "icon": "",
+    "visible": true
+  },
+  "transportation": {
+    "title": "Transportation",
+    "icon": "",
+    "visible": false
+  },
+  "accomodation": {
+    "title": "Accomodation",
+    "icon": "",
+    "visible": false
+  }
+}

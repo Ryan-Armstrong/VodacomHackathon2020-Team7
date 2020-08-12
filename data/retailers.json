@@ -1,0 +1,114 @@
+{
+  "kfc": {
+    "retailer_type": "take_outs",
+    "title": "KFC",
+    "logo": "./assets/retailers/logos/kfc.png",
+    "banner":  "./assets/retailers/banners/kfc.jpg",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "steers": {
+    "retailer_type": "take_outs",
+    "title": "Steers",
+    "logo": "./assets/retailers/logos/steers.png",
+    "banner":  "./assets/retailers/banners/steers.jpg",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "nandos": {
+    "retailer_type": "take_outs",
+    "title": "Nandos",
+    "logo": "./assets/retailers/logos/nandos.jpg",
+    "banner":  "./assets/retailers/banners/nandos.jpg",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "chicken_licken": {
+    "retailer_type": "take_outs",
+    "title": "Chicken Licken",
+    "logo": "./assets/retailers/logos/chicken_licken.jpg",
+    "banner":  "./assets/retailers/banners/chicken_licken.jpg",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "mc_donalds": {
+    "retailer_type": "take_outs",
+    "title": "McDonalds",
+    "logo": "./assets/retailers/logos/mc_donalds.jpg",
+    "banner":  "./assets/retailers/banners/",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "burger_king": {
+    "retailer_type": "take_outs",
+    "title": "Burger King",
+    "logo": "./assets/retailers/logos/burger_king.jpg",
+    "banner":  "./assets/retailers/banners/mc_donalds.jpg",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "pick_n_pay": {
+    "retailer_type": "groceries",
+    "title": "Pick 'n Pay",
+    "logo": "./assets/retailers/logos/pick_n_pay.jpg",
+    "banner":  "./assets/retailers/banners/pick_n_pay.jpg",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "spar": {
+    "retailer_type": "groceries",
+    "title": "Spar",
+    "logo": "./assets/retailers/logos/spar.png",
+    "banner":  "./assets/retailers/banners/spar.jpg",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "checkers": {
+    "retailer_type": "groceries",
+    "title": "Checkers",
+    "logo": "./assets/retailers/logos/checkers.jpg",
+    "banner":  "./assets/retailers/banners/checkers.png",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "woolworths": {
+    "retailer_type": "groceries",
+    "title": "Woolworths",
+    "logo": "./assets/retailers/logos/woolworths.jpg",
+    "banner":  "./assets/retailers/banners/woolworths.jpg",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "game": {
+    "retailer_type": "groceries",
+    "title": "Game",
+    "logo": "./assets/retailers/logos/game.jpg",
+    "banner":  "./assets/retailers/banners/game.jpg",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "makro": {
+    "retailer_type": "online_shopping",
+    "title": "Makro",
+    "logo": "./assets/retailers/logos/makro.jpg",
+    "banner":  "./assets/retailers/banners/makro.png",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "take_a_lot": {
+    "retailer_type": "online_shopping",
+    "title": "TakeALot",
+    "logo": "./assets/retailers/logos/take_a_lot.jpeg",
+    "banner":  "./assets/retailers/banners/take_a_lot.jpg",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  },
+  "one_day_only": {
+    "retailer_type": "online_shopping",
+    "title": "OneDayOnly",
+    "logo": "./assets/retailers/logos/one_day_only.jpg",
+    "banner":  "./assets/retailers/banners/one_day_only.jpg",
+    "advance_limit":  50.00,
+    "pay_now_limit": 25.00
+  }
+}
