@@ -1,10 +1,14 @@
+const app = getApp()
+
 Page({
+  data: {
+    retailer_types: null
+  },
   onLoad(query) {
-    // Page load
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
   },
   onReady() {
-    // Page loading is complete
+    this.setData({ retailer_types: app.retailer_types })
   },
   onShow() {
     // Page display
@@ -29,12 +33,22 @@ Page({
     return {
       title: 'My App',
       desc: 'My App description',
-      path: 'pages/index/index',
+      path: 'pages/landing-page/landing-page',
     };
   },
   next(){
-    console.log('here');
-    
-    my.navigateTo({ url: '../retailers/retailers' });
+    my.navigateTo({
+      url: '../vouchers/vouchers'
+    })
+  },
+  goto_retailer(event) {
+    let retailer_reference = event.target.dataset.reference
+    if (retailer_reference == undefined)
+    {
+      return
+    }
+    my.navigateTo({
+      url: '../retailers/retailers?retailer_type=' + retailer_reference
+    })
   }
 });

@@ -1,7 +1,8 @@
 {
-  "kfc": {
+  "0": {
     "retailer_type": "take_outs",
     "title": "KFC",
+    "reference": "kfc",
     "logo": "./assets/retailers/logos/kfc.png",
     "banner":  "./assets/retailers/banners/kfc.jpg",
     "advance": {
@@ -13,9 +14,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "steers": {
+  "1": {
     "retailer_type": "take_outs",
     "title": "Steers",
+    "reference": "steers",
     "logo": "./assets/retailers/logos/steers.png",
     "banner":  "./assets/retailers/banners/steers.jpg",
     "advance": {
@@ -27,9 +29,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "nandos": {
+  "2": {
     "retailer_type": "take_outs",
     "title": "Nandos",
+    "reference": "nandos",
     "logo": "./assets/retailers/logos/nandos.jpg",
     "banner":  "./assets/retailers/banners/nandos.jpg",
     "advance": {
@@ -41,9 +44,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "chicken_licken": {
+  "3": {
     "retailer_type": "take_outs",
     "title": "Chicken Licken",
+    "reference": "chicken_licken",
     "logo": "./assets/retailers/logos/chicken_licken.jpg",
     "banner":  "./assets/retailers/banners/chicken_licken.jpg",
     "advance": {
@@ -55,9 +59,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "mc_donalds": {
+  "4": {
     "retailer_type": "take_outs",
     "title": "McDonalds",
+    "reference": "mc_donalds",
     "logo": "./assets/retailers/logos/mc_donalds.jpg",
     "banner":  "./assets/retailers/banners/",
     "advance": {
@@ -69,9 +74,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "burger_king": {
+  "5": {
     "retailer_type": "take_outs",
     "title": "Burger King",
+    "reference": "burger_king",
     "logo": "./assets/retailers/logos/burger_king.jpg",
     "banner":  "./assets/retailers/banners/mc_donalds.jpg",
     "advance": {
@@ -83,9 +89,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "pick_n_pay": {
+  "6": {
     "retailer_type": "groceries",
     "title": "Pick 'n Pay",
+    "reference": "pick_n_pay",
     "logo": "./assets/retailers/logos/pick_n_pay.jpg",
     "banner":  "./assets/retailers/banners/pick_n_pay.jpg",
     "advance": {
@@ -97,9 +104,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "spar": {
+  "7": {
     "retailer_type": "groceries",
     "title": "Spar",
+    "reference": "spar",
     "logo": "./assets/retailers/logos/spar.png",
     "banner":  "./assets/retailers/banners/spar.jpg",
     "advance": {
@@ -111,9 +119,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "checkers": {
+  "8": {
     "retailer_type": "groceries",
     "title": "Checkers",
+    "reference": "checkers",
     "logo": "./assets/retailers/logos/checkers.jpg",
     "banner":  "./assets/retailers/banners/checkers.png",
     "advance": {
@@ -125,9 +134,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "woolworths": {
+  "9": {
     "retailer_type": "groceries",
     "title": "Woolworths",
+    "reference": "woolworths",
     "logo": "./assets/retailers/logos/woolworths.jpg",
     "banner":  "./assets/retailers/banners/woolworths.jpg",
     "advance": {
@@ -139,9 +149,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "game": {
+  "10": {
     "retailer_type": "groceries",
     "title": "Game",
+    "reference": "game",
     "logo": "./assets/retailers/logos/game.jpg",
     "banner":  "./assets/retailers/banners/game.jpg",
     "advance": {
@@ -153,9 +164,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "makro": {
+  "11": {
     "retailer_type": "online_shopping",
     "title": "Makro",
+    "reference": "makro",
     "logo": "./assets/retailers/logos/makro.jpg",
     "banner":  "./assets/retailers/banners/makro.png",
     "advance": {
@@ -167,9 +179,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "take_a_lot": {
+  "12": {
     "retailer_type": "online_shopping",
     "title": "TakeALot",
+    "reference": "take_a_lot",
     "logo": "./assets/retailers/logos/take_a_lot.jpeg",
     "banner":  "./assets/retailers/banners/take_a_lot.jpg",
     "advance": {
@@ -181,9 +194,10 @@
       "bonus_percentage": 10.00
     }
   },
-  "one_day_only": {
+  "13": {
     "retailer_type": "online_shopping",
     "title": "OneDayOnly",
+    "reference": "one_day_only",
     "logo": "./assets/retailers/logos/one_day_only.jpg",
     "banner":  "./assets/retailers/banners/one_day_only.jpg",
     "advance": {

@@ -1,0 +1,8 @@
+<view>
+  <view a:for="{{retailer_types}}" a:for-item="retailer_type">
+    <label a:if="{{retailer_type.visible}}">
+      <button onTap="goto_retailer" data-reference="{{retailer_type.reference}}">{{retailer_type.title}}</button>
+    </label>
+  </view>
+  <button size="default" type="primary"  onTap="next">Next</button>
+</view>

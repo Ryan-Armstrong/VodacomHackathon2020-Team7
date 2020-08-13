@@ -1,4 +1,0 @@
-<view>
-  <view>landing</view>
-  <button size="default" type="primary"  onTap="next">Next</button>
-</view>
