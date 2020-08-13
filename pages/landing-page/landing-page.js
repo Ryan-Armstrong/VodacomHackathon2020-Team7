@@ -2,15 +2,18 @@ const app = getApp()
 
 Page({
   data: {
-    retailer_types: null
+    retailer_types: null,
+    newestVoucher: null
   },
   onLoad(query) {
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
   },
   onReady() {
     this.setData({
-      retailer_types: app.get('/retailer_types')
+      retailer_types: app.get('/retailer_types'),
+      newestVoucher: app.newestVoucher
     })
+    console.log(this.data.newestVoucher.total_amount)
   },
   onShow() {
     // Page display
@@ -37,11 +40,6 @@ Page({
       desc: 'My App description',
       path: 'pages/landing-page/landing-page',
     };
-  },
-  next(){
-    my.navigateTo({
-      url: '../vouchers/vouchers'
-    })
   },
   goto_retailer(event) {
     my.navigateTo({

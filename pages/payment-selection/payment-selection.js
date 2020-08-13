@@ -78,6 +78,8 @@ Page({
     if (this.validatePaymentOptions())
     {
       app.paymentInformation = {
+        retailer: this.data.retailer.id,
+        voucherType: this.data.voucherType,
         advanceAmount: this.data.advanceAmount,
         settlementPeriod: this.data.settlementPeriod,
         onceOffAmount: this.data.onceOffAmount,

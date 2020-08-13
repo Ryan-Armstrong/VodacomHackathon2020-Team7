@@ -19,7 +19,7 @@ Page({
     if (this.data.card != undefined)
     {
       app.paymentInformation['card'] = this.data.card
-      my.navigateTo({
+      my.redirectTo({
         url: '../payment-summary/payment-summary'
       })
     }

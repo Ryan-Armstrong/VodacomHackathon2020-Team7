@@ -1,18 +1,44 @@
 {
-  "payment_failed": {
+  "0": {
+    "id": "0",
     "title": "Payment Failed",
+    "reference": "payment_failed",
     "description": "The payment for this voucher has failed."
   },
-  "payment_succesful": {
+  "1": {
+    "id": "1", 
     "title": "Payment Succesful",
+    "reference": "payment_succesful",
     "description": "The payment for this voucher was succesful."
   },
-  "redeemed": {
+  "2": {
+    "id": "2",
+    "title": "Payment Partially Completed",
+    "reference": "payment_partial_completion",
+    "description": "The once-off payment for this voucher was successful; the advance payment for this payment still needs to be settled."
+  },
+  "3": {
+    "id": "3",
+    "title": "Payment to be Settled",
+    "reference": "payment_not_settled",
+    "description": "The payment for this advance voucher has not yet been settled."
+  },
+  "4": {
+    "id": "4",
+    "title": "Payment Settled",
+    "reference": "payment_setteld",
+    "description": "The payment for this advance voucher has been settled."
+  },
+  "5": {
+    "id": "5",
     "title": "Voucher Redeemed",
+    "reference": "redeemed",
     "description": "This voucher has been redeemed."
   },
-  "expired": {
+  "6": {
+    "id": "6",
     "title": "Voucher Expired",
+    "reference": "expired",
     "description": "This voucher has expired."
   }
 }

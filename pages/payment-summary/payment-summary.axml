@@ -1,4 +1,11 @@
 <view>
-<view>payment summary</view>
-  <button size="default" type="primary"  onTap="next">Next</button>
+  <view>Card: {{card}}</view>
+  <view>Retailer: {{retailer}}</view>
+  <view>Voucher Type: {{voucherType}}</view>
+  <view>Advance Amount: {{advanceAmount}}</view>
+  <view>Settlement Period: {{settlementPeriod}}</view>
+  <view>Once Off Amount: {{onceOffAmount}}</view>
+  <view>Bonus Amount: {{bonusAmount}}</view>
+  <view>Total Amount: {{totalAmount}}</view>
+  <button size="default" type="primary" onTap="createVoucher">Finish</button>
 </view>

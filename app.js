@@ -22,6 +22,7 @@ App({
   voucher_states: null,
   vouchers: null,
   paymentInformation: null,
+  newestVoucher: null,
   onLaunch(options) {
     this.card_types = card_types
     this.cards = cards
@@ -33,6 +34,7 @@ App({
     this.voucher_states = voucher_states
     this.voucherTypes = voucherTypes
     this.vouchers = vouchers
+    this.setNewestVoucher(vouchers['4'])
   },
   onShow(options) {
     //
@@ -130,6 +132,11 @@ App({
       default:
         return null
     }
+  },
+  setNewestVoucher(voucher) {
+    let newestVoucher = voucher
+    newestVoucher['retailer'] = this.get('/retailers/' + newestVoucher.retailer)
+    this.newestVoucher = newestVoucher
   }
 })
 
