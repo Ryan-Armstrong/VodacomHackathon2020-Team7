@@ -30,5 +30,107 @@ App({
   },
   onShow(options) {
     //
+  },
+  post(url, body) {
+    let query_params = extract_query_params(url)
+    let data_model = this.get_data_model(query_params.model)
+    let id = create_integer_id(data_model)
+    data_model[id] = body
+    var response = body
+    response['id'] = id
+    return response
+  },
+  get(url) {
+    let query_params = extract_query_params(url)
+    if (query_params.id == undefined)
+    {
+      return null
+    }
+    let data_model = this.get_data_model(query_params.model)
+    if (data_model[query_params.id] == undefined)
+    {
+      return null
+    } else
+    {
+      return data_model[query_params.id]
+    }
+  },
+  put(url, body) {
+    let query_params = extract_query_params(url)
+    if (query_params.id == undefined)
+    {
+      return null
+    }
+    let data_model = this.get_data_model(query_params.model)
+    if (data_model[query_params.id] == undefined)
+    {
+      return null
+    } else
+    {
+      data_model[query_params.id] = body
+      return data_model[query_params.id]
+    }
+  },
+  destroy(url) {
+    let query_params = extract_query_params(url)
+    if (query_params.id == undefined)
+    {
+      return null
+    }
+    let data_model = this.get_data_model(query_params.model)
+    if (data_model[query_params.id] != undefined)
+    {
+      delete data_model[query_params.id]
+    }
+    return null
+  },
+  get_data_model(model)
+  {
+    switch (model) {
+      case 'card_types':
+        return this.card_types
+      case 'cards':
+        return this.cards
+      case 'retailer_types':
+        return this.retailer_types
+      case 'retailers':
+        return this.retailers
+      case 'advance_voucher_presets':
+        return this.voucher_presets.advance
+      case 'once_off_voucher_presets':
+        return this.voucher_presets.once_off
+      case 'voucher_states':
+        return this.voucher_states
+      case 'vouchers':
+        return this.vouchers
+      default:
+        return null
+    }
   }
 })
+
+const extract_query_params = (url) => {
+  let query = url.split('/')
+  var query_params = {
+    model: query[1]
+  }
+  if (query.length == 3)
+  {
+    query_params['id'] = query[2]
+  }
+  return query_params
+}
+
+const create_integer_id = (model) => {
+  let keys = Object.keys(model)
+  var index = 0
+  while (true) {
+    if ( keys.includes(String(index)) ) {
+      index += 1
+    } else
+    {
+      break
+    }
+  }
+  return index
+}
