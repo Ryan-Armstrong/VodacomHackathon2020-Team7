@@ -2,7 +2,8 @@ const app = getApp()
 
 Page({
   data: {
-    retailer: null
+    retailer: null,
+    payment_type: 'once_off'
   },
   onLoad(query) {
     this.setData({

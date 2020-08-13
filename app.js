@@ -27,6 +27,7 @@ App({
     this.voucher_presets.once_off = once_off_voucher_presets
     this.voucher_states = voucher_states
     this.vouchers = vouchers
+    console.log(this.get('/vouchers?ids=1,2,3'))
   },
   onShow(options) {
     //
@@ -43,16 +44,30 @@ App({
   get(url) {
     let query_params = extract_query_params(url)
     let data_model = this.get_data_model(query_params.model)
-    if (query_params.id == undefined)
+    if (query_params.id != undefined)
     {
-      return data_model
-    }
-    if (data_model[query_params.id] == undefined)
+      if (data_model[query_params.id] == undefined)
+      {
+        return null
+      } else
+      {
+        return data_model[query_params.id]
+      }
+    } else if (query_params.ids != undefined)
     {
-      return null
+      var response_data = {}
+      for (var i = 0; i < query_params.ids.length; i++)
+      {
+        let data = data_model[query_params.ids[i]]
+        if (data != undefined)
+        {
+          response_data[query_params.ids[i]] = data
+        }
+      }
+      return response_data
     } else
     {
-      return data_model[query_params.id]
+      return data_model
     }
   },
   put(url, body) {
@@ -111,10 +126,19 @@ App({
 
 const extract_query_params = (url) => {
   let query = url.split('/')
-  var query_params = {
-    model: query[1]
-  }
-  if (query.length == 3)
+  var query_params = {}
+  if (query.length == 2)
+  {
+    let index_params = query[1].split('?')
+    if (index_params.length == 1)
+    {
+      query_params['model'] = query[1]
+    } else
+    {
+      query_params['model'] = index_params[0]
+      query_params['ids'] = index_params[1].split('ids=')[1].split(',')
+    }
+  } else if (query.length == 3)
   {
     query_params['id'] = query[2]
   }
