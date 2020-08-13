@@ -44,9 +44,8 @@ Page({
     })
   },
   goto_retailer(event) {
-    let retailer_reference = event.target.dataset.reference
     my.navigateTo({
-      url: '../retailers/retailers?retailer_type=' + retailer_reference
+      url: '../retailers/retailers?retailer_type=' + event.target.dataset.reference
     })
   }
 });

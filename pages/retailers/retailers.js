@@ -21,9 +21,9 @@ Page({
     }
     this.setData({ retailers: retailers })
   },
-  goto_payment_select(event) {
+  gotoPaymentSelect(event) {
     my.navigateTo({
-      url: '../payment-selection/payment-selection?retailer_id=' + event.target.dataset.id
+      url: '../payment-selection/payment-selection?retailerId=' + event.target.dataset.id
     })
   }
 })

@@ -1,7 +1,7 @@
 <view>
   <view a:for="{{retailers}}" a:for-item="retailer">
     <label a:if="{{retailer.visible}}">
-      <button onTap="goto_payment_select" data-id="{{retailer.id}}">{{retailer.title}}</button>
+      <button onTap="gotoPaymentSelect" data-id="{{retailer.id}}">{{retailer.title}}</button>
     </label>
   </view>
 </view>

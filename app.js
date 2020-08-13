@@ -1,10 +1,12 @@
-const advance_voucher_presets = require('./data/advance_voucher_presets.json')
+const advance_voucher_presets = require('./data/advance_presets.json')
+const advance_voucher_settlement_periods = require('./data/advance_settlement_periods.json')
 const card_types = require('./data/card_types.json')
 const cards = require('./data/cards.json')
-const once_off_voucher_presets = require('./data/once_off_voucher_presets.json')
+const once_off_voucher_presets = require('./data/once_off_presets.json')
 const retailer_types = require('./data/retailer_types.json')
 const retailers = require('./data/retailers.json')
 const voucher_states = require('./data/voucher_states.json')
+const voucherTypes = require('./data/voucher_types.json')
 const vouchers = require('./data/vouchers.json')
 
 App({
@@ -14,20 +16,23 @@ App({
   retailers: null,
   voucher_presets: {
     advance: null,
+    advanceSettlementPeriods: null,
     once_off: null
   },
   voucher_states: null,
   vouchers: null,
+  paymentInformation: null,
   onLaunch(options) {
     this.card_types = card_types
     this.cards = cards
     this.retailer_types = retailer_types
     this.retailers = retailers
     this.voucher_presets.advance = advance_voucher_presets
+    this.voucher_presets.advanceSettlementPeriods = advance_voucher_settlement_periods
     this.voucher_presets.once_off = once_off_voucher_presets
     this.voucher_states = voucher_states
+    this.voucherTypes = voucherTypes
     this.vouchers = vouchers
-    console.log(this.get('/vouchers?ids=1,2,3'))
   },
   onShow(options) {
     //
@@ -112,10 +117,14 @@ App({
         return this.retailers
       case 'advance_voucher_presets':
         return this.voucher_presets.advance
+      case 'advance_settlements':
+        return this.voucher_presets.advanceSettlementPeriods
       case 'once_off_voucher_presets':
         return this.voucher_presets.once_off
       case 'voucher_states':
         return this.voucher_states
+      case 'voucherTypes':
+        return this.voucherTypes
       case 'vouchers':
         return this.vouchers
       default:
@@ -140,6 +149,7 @@ const extract_query_params = (url) => {
     }
   } else if (query.length == 3)
   {
+    query_params['model'] = query[1]
     query_params['id'] = query[2]
   }
   return query_params

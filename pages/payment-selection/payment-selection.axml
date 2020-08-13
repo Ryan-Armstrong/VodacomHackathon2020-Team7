@@ -1,4 +1,40 @@
 <view>
   <view>{{retailer.title}}</view>
-  <button size="default" type="primary"  onTap="next">Next</button>
+  <view>Total: {{totalAmount}}</view>
+  <block a:if="{{voucherType=='advance' || voucherType=='partial'}}">
+    Settlement Period: {{settlementPeriod}}
+  </block>
+  <view>
+    <label a:for="{{voucherTypes}}" a:for-item="voucherType">
+      <button onTap="setVoucherType" data-voucherType="{{voucherType.reference}}">{{voucherType.title}}</button>
+    </label>
+  </view>
+
+  <view>
+    <block a:if="{{voucherType=='once_off' || voucherType=='partial'}}">
+      Once Off Payments
+      <label a:for="{{onceOffVoucherPresets}}" a:for-item="onceOffPreset">
+        <button onTap="setOnceOffAmount" data-amount="{{onceOffPreset.amount}}">{{onceOffPreset.amount}}</button>
+      </label>
+    </block>
+  </view>
+  <view>
+    <block a:if="{{voucherType=='advance' || voucherType=='partial'}}">
+      <view>
+        Advance Payments
+        <label a:for="{{advanceVoucherPresets}}" a:for-item="advancePreset">
+          <button onTap="setAdvanceAmount" data-amount="{{advancePreset.amount}}">{{advancePreset.amount}}</button>
+        </label>
+      </view>
+      <view>
+        Settlement Periods
+        <label a:for="{{advanceSettlementPeriods}}" a:for-item="settlementPeriod">
+          <label a:if="{{settlementPeriod.visible}}">
+            <button onTap="setSettlementPeriod" data-days="{{settlementPeriod.days}}">{{settlementPeriod.days}}</button>
+          </label>
+        </label>
+      </view>
+    </block>
+  </view>
+  <button onTap="gotoCardSelect">Continue</button>
 </view>

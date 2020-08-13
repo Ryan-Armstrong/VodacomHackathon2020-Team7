@@ -1,6 +1,15 @@
 <view>
-<view>
-  Card selection
-</view>
+  <view>
+    Card selection
+  </view>
+  <view>
+    <view a:for="{{cards}}" a:for-item="card">
+      <label>{{card.number}}</label>
+      <label>{{card.cvc}}</label>
+      <label>{{card.holder}}</label>
+      <label>{{card.expiry_date}}</label>
+      <button onTap="setVoucherType" data-voucherType="{{voucherType.reference}}">Select</button>
+    </view>
+  </view>
   <button size="default" type="primary"  onTap="next">Next</button>
 </view>

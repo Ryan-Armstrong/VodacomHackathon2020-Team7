@@ -1,0 +1,37 @@
+{
+  "0": {
+    "id": "0",
+    "days": "1",
+    "visible": false
+  },
+  "1": {
+    "id": "1",
+    "days": "2",
+    "visible": false
+  },
+  "2": {
+    "id": "2",
+    "days": "3",
+    "visible": false
+  },
+  "3": {
+    "id": "3",
+    "days": "7",
+    "visible": true
+  },
+  "4": {
+    "id": "4",
+    "days": "14",
+    "visible": true
+  },
+  "5": {
+    "id": "5",
+    "days": "21",
+    "visible": true
+  },
+  "6": {
+    "id": "6",
+    "days": "31",
+    "visible": false
+  }
+}
