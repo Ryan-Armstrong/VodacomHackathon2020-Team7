@@ -1,4 +1,4 @@
 <view>
-<view>payment selection</view>
+  <view>{{retailer.title}}</view>
   <button size="default" type="primary"  onTap="next">Next</button>
 </view>

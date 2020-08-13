@@ -35,18 +35,18 @@ App({
     let query_params = extract_query_params(url)
     let data_model = this.get_data_model(query_params.model)
     let id = create_integer_id(data_model)
-    data_model[id] = body
     var response = body
     response['id'] = id
+    data_model[id] = response
     return response
   },
   get(url) {
     let query_params = extract_query_params(url)
+    let data_model = this.get_data_model(query_params.model)
     if (query_params.id == undefined)
     {
-      return null
+      return data_model
     }
-    let data_model = this.get_data_model(query_params.model)
     if (data_model[query_params.id] == undefined)
     {
       return null

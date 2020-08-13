@@ -1,6 +1,7 @@
 <view>
   <view a:for="{{retailers}}" a:for-item="retailer">
-    <button onTap="goto_payment_select" data-reference="{{retailer.reference}}">{{retailer.title}}</button>
+    <label a:if="{{retailer.visible}}">
+      <button onTap="goto_payment_select" data-id="{{retailer.id}}">{{retailer.title}}</button>
+    </label>
   </view>
-  <button size="default" type="primary"  onTap="next">Next</button>
 </view>

@@ -1,8 +1,9 @@
 {
   "0": {
-    "retailer_type": "take_outs",
+    "id": "0",
     "title": "KFC",
     "reference": "kfc",
+    "visible": true,
     "logo": "./assets/retailers/logos/kfc.png",
     "banner":  "./assets/retailers/banners/kfc.jpg",
     "advance": {
@@ -12,12 +13,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "take_outs"
   },
   "1": {
-    "retailer_type": "take_outs",
+    "id": "1",
     "title": "Steers",
     "reference": "steers",
+    "visible": true,
     "logo": "./assets/retailers/logos/steers.png",
     "banner":  "./assets/retailers/banners/steers.jpg",
     "advance": {
@@ -27,12 +30,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "take_outs"
   },
   "2": {
-    "retailer_type": "take_outs",
+    "id": "2",
     "title": "Nandos",
     "reference": "nandos",
+    "visible": true,
     "logo": "./assets/retailers/logos/nandos.jpg",
     "banner":  "./assets/retailers/banners/nandos.jpg",
     "advance": {
@@ -42,12 +47,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "take_outs"
   },
   "3": {
-    "retailer_type": "take_outs",
+    "id": "3",
     "title": "Chicken Licken",
     "reference": "chicken_licken",
+    "visible": true,
     "logo": "./assets/retailers/logos/chicken_licken.jpg",
     "banner":  "./assets/retailers/banners/chicken_licken.jpg",
     "advance": {
@@ -57,12 +64,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "take_outs"
   },
   "4": {
-    "retailer_type": "take_outs",
+    "id": "4",
     "title": "McDonalds",
     "reference": "mc_donalds",
+    "visible": true,
     "logo": "./assets/retailers/logos/mc_donalds.jpg",
     "banner":  "./assets/retailers/banners/",
     "advance": {
@@ -72,12 +81,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "take_outs"
   },
   "5": {
-    "retailer_type": "take_outs",
+    "id": "5",
     "title": "Burger King",
     "reference": "burger_king",
+    "visible": true,
     "logo": "./assets/retailers/logos/burger_king.jpg",
     "banner":  "./assets/retailers/banners/mc_donalds.jpg",
     "advance": {
@@ -87,12 +98,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "take_outs"
   },
   "6": {
-    "retailer_type": "groceries",
+    "id": "6",
     "title": "Pick 'n Pay",
     "reference": "pick_n_pay",
+    "visible": true,
     "logo": "./assets/retailers/logos/pick_n_pay.jpg",
     "banner":  "./assets/retailers/banners/pick_n_pay.jpg",
     "advance": {
@@ -102,12 +115,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "groceries"
   },
   "7": {
-    "retailer_type": "groceries",
+    "id": "7",
     "title": "Spar",
     "reference": "spar",
+    "visible": true,
     "logo": "./assets/retailers/logos/spar.png",
     "banner":  "./assets/retailers/banners/spar.jpg",
     "advance": {
@@ -117,12 +132,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "groceries"
   },
   "8": {
-    "retailer_type": "groceries",
+    "id": "8",
     "title": "Checkers",
     "reference": "checkers",
+    "visible": true,
     "logo": "./assets/retailers/logos/checkers.jpg",
     "banner":  "./assets/retailers/banners/checkers.png",
     "advance": {
@@ -132,12 +149,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "groceries"
   },
   "9": {
-    "retailer_type": "groceries",
+    "id": "9",
     "title": "Woolworths",
     "reference": "woolworths",
+    "visible": true,
     "logo": "./assets/retailers/logos/woolworths.jpg",
     "banner":  "./assets/retailers/banners/woolworths.jpg",
     "advance": {
@@ -147,12 +166,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "groceries"
   },
   "10": {
-    "retailer_type": "groceries",
+    "id": "10",
     "title": "Game",
     "reference": "game",
+    "visible": true,
     "logo": "./assets/retailers/logos/game.jpg",
     "banner":  "./assets/retailers/banners/game.jpg",
     "advance": {
@@ -162,12 +183,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "groceries"
   },
   "11": {
-    "retailer_type": "online_shopping",
+    "id": "11",
     "title": "Makro",
     "reference": "makro",
+    "visible": true,
     "logo": "./assets/retailers/logos/makro.jpg",
     "banner":  "./assets/retailers/banners/makro.png",
     "advance": {
@@ -177,12 +200,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "online_shopping"
   },
   "12": {
-    "retailer_type": "online_shopping",
+    "id": "12",
     "title": "TakeALot",
     "reference": "take_a_lot",
+    "visible": true,
     "logo": "./assets/retailers/logos/take_a_lot.jpeg",
     "banner":  "./assets/retailers/banners/take_a_lot.jpg",
     "advance": {
@@ -192,12 +217,14 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "online_shopping"
   },
   "13": {
-    "retailer_type": "online_shopping",
+    "id": "13",
     "title": "OneDayOnly",
     "reference": "one_day_only",
+    "visible": true,
     "logo": "./assets/retailers/logos/one_day_only.jpg",
     "banner":  "./assets/retailers/banners/one_day_only.jpg",
     "advance": {
@@ -207,6 +234,7 @@
       "presets": "1,2,3,4,5",
       "bonus_flat_limit": 50.00,
       "bonus_percentage": 10.00
-    }
+    },
+    "retailer_type": "online_shopping"
   }
 }

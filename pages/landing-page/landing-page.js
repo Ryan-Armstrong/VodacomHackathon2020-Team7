@@ -8,7 +8,9 @@ Page({
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
   },
   onReady() {
-    this.setData({ retailer_types: app.retailer_types })
+    this.setData({
+      retailer_types: app.get('/retailer_types')
+    })
   },
   onShow() {
     // Page display
@@ -43,10 +45,6 @@ Page({
   },
   goto_retailer(event) {
     let retailer_reference = event.target.dataset.reference
-    if (retailer_reference == undefined)
-    {
-      return
-    }
     my.navigateTo({
       url: '../retailers/retailers?retailer_type=' + retailer_reference
     })
