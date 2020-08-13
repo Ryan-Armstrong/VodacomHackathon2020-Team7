@@ -8,8 +8,8 @@
       <label>{{card.cvc}}</label>
       <label>{{card.holder}}</label>
       <label>{{card.expiry_date}}</label>
-      <button onTap="setVoucherType" data-voucherType="{{voucherType.reference}}">Select</button>
+      <button onTap="setCard" data-id="{{card.id}}">Select</button>
     </view>
   </view>
-  <button size="default" type="primary"  onTap="next">Next</button>
+  <button onTap="gotoPaymentSummary">Continue</button>
 </view>
