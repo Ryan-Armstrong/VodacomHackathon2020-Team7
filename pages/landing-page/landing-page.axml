@@ -79,7 +79,7 @@
                   a:if="{{retailer.visible}}" 
                   class="selection-item padding-10" 
                   onTap="gotoPaymentSelect" 
-                  data-reference="{{retailer.reference}}">
+                  data-id="{{retailer.id}}">
                   <card roundedCorners="{{true}}">
                     <image mode="aspectFit" src="{{retailer.logo}}" class="full-width icon"/>
                   </card>
