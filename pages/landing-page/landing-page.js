@@ -13,7 +13,6 @@ Page({
       retailer_types: app.get('/retailer_types'),
       newestVoucher: app.newestVoucher
     })
-    console.log(this.data.newestVoucher.total_amount)
   },
   onShow() {
     // Page display
