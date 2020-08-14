@@ -1,1 +1,7 @@
-{}
+{
+  "usingComponents": {
+    "tabs": "mini-antui/es/tabs/index",
+    "card": "/components/card/card",
+    "tab-content": "mini-antui/es/tabs/tab-content/index"
+  }
+}

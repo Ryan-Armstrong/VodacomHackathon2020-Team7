@@ -1,0 +1,13 @@
+<view class="card-container">
+  <view class="card has-shadow {{!roundedCorners?'':'border-radius'}} {{class}}">
+    <view class="card-content padding-y-20">
+      <slot>
+      </slot>
+    </view>
+    <view a:if="{{onButtonLeft || onButtonRight}}" class="buttons padding-top-20">
+      <button data-cardId="{{identifier}}" a:if="{{onButtonLeft}}" class="button button-secondary left" onTap="onButtonLeft">{{buttonLeftText}}</button>
+      <button data-cardId="{{identifier}}" a:if="{{onButtonRight}}" class="button button-primary right" onTap="onButtonRight">{{buttonRightText}}</button>
+    </view>
+  </view>
+  
+</view>

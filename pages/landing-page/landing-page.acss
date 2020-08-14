@@ -1,0 +1,48 @@
+.tab-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 400px;
+  background-color: #efefef;
+  flex-direction: column;
+}
+.am-tabs-tab-bar-wrap, .am-tabs-content-wrap {
+  height: 100%;
+}
+.past-vouchers{
+}
+
+.data-pair{
+  font-size: 17px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.voucher-summary{
+  width: 100%;
+}
+
+.am-tabs-bar{
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.298039);
+  margin-bottom: 10px;
+
+}
+
+.icon{
+  max-height: 50px;
+}
+
+.am-tabs-bar-title {
+  width:100%;
+  text-align: center;
+}
+
+.selection{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.selection-item{
+  width:44%;
+}

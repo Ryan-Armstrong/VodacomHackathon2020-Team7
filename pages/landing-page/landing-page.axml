@@ -1,15 +1,135 @@
-<view>
-  <block>
-    <view>Your most recent voucher.</view>
-    <view>Retailer: {{newestVoucher.retailer.title}}</view>
-    <view>Amount: R {{newestVoucher.total_amount}}</view>
-    <view>State: {{newestVoucher.state}}</view>
-    <view>Expires At: {{newestVoucher.expires_at}}</view>
-    <view></view>
-  </block>
-  <view a:for="{{retailer_types}}" a:for-item="retailer_type">
-    <label a:if="{{retailer_type.visible}}">
-      <button onTap="goto_retailer" data-reference="{{retailer_type.reference}}">{{retailer_type.title}}</button>
-    </label>
-  </view>
+
+<view class="main-container">
+  <tabs
+  class="content"
+    tabs="{{tabs}}"
+    onTabClick="handleTabClick"
+    onChange="handleTabChange"
+    activeTab="{{activeTab}}"
+    tabBarUnderlineColor="#ed1d25"
+    tabBarActiveTextColor="#ed1d25"
+  >
+    <block a:for="{{tabs}}" a:for-item="tab">
+      <tab-content key="{{index}}">
+        <view a:if="{{!retailerSelection}}">
+          <view a:if="{{activeTab==0}}" class="tab-content">
+            <!-- Voucher Types -->
+            <view class="full-width">
+              <view class="selection">
+                <view onTap="gotoRetailer" data-reference="{{retailerType.reference}}" a:for="{{retailerTypes}}" a:for-item="retailerType" class="selection-item padding-10" a:if="{{retailerType.visible}}">
+                  <card roundedCorners="{{true}}">
+                    <image mode="aspectFit" src="{{retailerType.icon}}" class="full-width icon"/>
+                    <view class="title is-3">
+                      {{retailerType.title}}
+                    </view>
+                  </card>
+                </view>
+              </view>
+            </view>
+            <!-- Newest -->
+            <view a:if={{newestVoucher}} class="full-width margin-bottom-20">
+              <view class="title is-3 text-red">Recent voucher</view>
+              <card 
+                  identifier="{{index}}"
+                  onButtonLeft="onShowDetails" 
+                  buttonLeftText="See Details" 
+                  onButtonRight="{{voucher.state === 'expired' || voucher.state === 'redeemed'? null: 'payNow'}}" 
+                  buttonRightText="Settle Now">
+                
+                  <view class="data-pair margin-y-5">
+                    <view >Payment date:</view>
+                    <view  class="bold">
+                      {{newestVoucher.expires_at}}
+                    </view>
+                  </view>
+                  <view class="data-pair margin-y-5">
+                    <view >Payment amount:</view>
+                    <view  class="bold">
+                      {{newestVoucher.total_amount}}
+                    </view>
+                  </view>
+                  <view class="data-pair margin-y-5">
+                    <view >Payment method:</view>
+                    <view  class="bold">
+                      {{voucherTypes[newestVoucher.method].title}}
+                    </view>
+                  </view>
+                  <view class="data-pair margin-y-5">
+                    <view >Status:</view>
+                    <view a:if="{{newestVoucher.state !== 'redeemed'}}" class="bold text-grey">
+                      {{newestVoucher.state === 'expired'? 'Expired at ': 'Expires at '}}{{newestVoucher.expires_at}}
+                    </view>
+                    <view a:if="{{newestVoucher.state === 'redeemed'}}" class="bold text-grey">
+                      Redeemed
+                    </view>
+                  </view>
+              </card>
+                
+            </view>
+          </view>
+          
+        </view>
+        <!-- Retailers -->
+        <view a:if="{{retailerSelection}}" class="tab-content">
+          <view class="full-width">
+              <view class="selection">
+                <view 
+                  a:for="{{retailers}}" 
+                  a:for-item="retailer" 
+                  a:if="{{retailer.visible}}" 
+                  class="selection-item padding-10" 
+                  onTap="gotoPaymentSelect" 
+                  data-reference="{{retailer.reference}}">
+                  <card roundedCorners="{{true}}">
+                    <image mode="aspectFit" src="{{retailer.logo}}" class="full-width icon"/>
+                  </card>
+                </view>
+              </view>
+            </view>
+        </view>
+        <!-- Past Vouchers -->
+        <view a:if="{{activeTab==1}}" class="tab-content past-vouchers">
+          <view a:for="{{pastVouchers}}" a:for-item="voucher" class="voucher-summary margin-bottom-20">
+            <card 
+              identifier="{{index}}"
+              onButtonLeft="onShowDetails" 
+              buttonLeftText="See Details" 
+              onButtonRight="{{voucher.state === 'expired' || voucher.state === 'redeemed'? null: 'payNow'}}" 
+              buttonRightText="Settle Now"
+
+              >
+              <view class="data-pair margin-y-5">
+                <view >Payment date:</view>
+                <view  class="bold">
+                  {{voucher.expires_at}}
+                </view>
+              </view>
+              <view class="data-pair margin-y-5">
+                <view >Payment amount:</view>
+                <view  class="bold">
+                  {{voucher.total_amount}}
+                </view>
+              </view>
+              <view class="data-pair margin-y-5">
+                <view >Payment method:</view>
+                <view  class="bold">
+                  {{voucherTypes[voucher.method].title}}
+                </view>
+              </view>
+              <view class="data-pair margin-y-5">
+                <view >Status:</view>
+                <view a:if="{{voucher.state !== 'redeemed'}}" class="bold text-grey">
+                  {{voucher.state === 'expired'? 'Expired at ': 'Expires at '}}{{voucher.expires_at}}
+                </view>
+                <view a:if="{{voucher.state === 'redeemed'}}" class="bold text-grey">
+                  Redeemed
+                </view>
+              </view>
+            </card>
+            
+          </view>
+        </view>
+      </tab-content>
+    </block>
+  </tabs>
 </view>

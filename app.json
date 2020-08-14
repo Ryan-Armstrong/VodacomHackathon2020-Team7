@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/landing-page/landing-page",
-    "pages/retailers/retailers",
     "pages/payment-summary/payment-summary",
     "pages/payment-selection/payment-selection",
     "pages/card-selection/card-selection",

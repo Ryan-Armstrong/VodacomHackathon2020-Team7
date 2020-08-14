@@ -1,17 +1,17 @@
 {
-    "0": {
+    "partial": {
         "id": "0",
         "title": "Partial",
         "description": "This voucher was purchased using both an Advance and a Once-Off payment",
         "reference": "partial"
     },
-    "1": {
+    "once_off": {
         "id": "1",
         "title": "Once-Off",
         "description": "This voucher was purchased using a Once-Off payment",
         "reference": "once_off"
     }, 
-    "2": {
+    "advance": {
         "id": "2",
         "title": "Advance",
         "description": "This voucher was purchased using an Advance payment",

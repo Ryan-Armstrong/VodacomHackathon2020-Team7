@@ -1,0 +1,33 @@
+.card{
+  width:100%;
+  background-color: #fff;
+  /* margin-left: 10rpx;
+  margin-right: 10rpx; */
+  padding: 20px;
+}
+
+.card-container{
+  flex-shrink: 0;
+  width: 100%;
+  display:flex;
+}
+
+.border-radius{
+  border-radius: 10px;
+
+}
+
+.button{
+  width: 44%;
+}
+
+.buttons{
+  border-top: 1px solid #dbdbdb;
+  display:flex;
+  flex-direction: row;
+  /* justify-content: flex-end; */
+}
+
+.right{
+  margin-left: auto;
+}
