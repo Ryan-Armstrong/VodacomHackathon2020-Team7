@@ -10,9 +10,9 @@
     tabBarActiveTextColor="#ed1d25"
   >
     <block a:for="{{tabs}}" a:for-item="tab">
-      <tab-content key="{{index}}">
-        <view a:if="{{!retailerSelection}}">
-          <view a:if="{{activeTab==0}}" class="tab-content">
+      <tab-content key="{{index}}" >
+        <view a:if="{{activeTab==0}}" class="tab-content">
+          <view a:if="{{!retailerSelection}}">
             <!-- Voucher Types -->
             <view class="full-width">
               <view class="selection">
@@ -35,7 +35,7 @@
                   buttonLeftText="See Details" 
                   onButtonRight="{{voucher.state === 'expired' || voucher.state === 'redeemed'? null: 'payNow'}}" 
                   buttonRightText="Settle Now">
-                
+                <view class="margin-y-20">
                   <view class="data-pair margin-y-5">
                     <view >Payment date:</view>
                     <view  class="bold">
@@ -63,14 +63,14 @@
                       Redeemed
                     </view>
                   </view>
+                  </view>
               </card>
                 
             </view>
           </view>
           
-        </view>
         <!-- Retailers -->
-        <view a:if="{{retailerSelection}}" class="tab-content">
+        <view a:if="{{retailerSelection}}">
           <view class="full-width">
               <view class="selection">
                 <view 
@@ -87,6 +87,7 @@
               </view>
             </view>
         </view>
+        </view>
         <!-- Past Vouchers -->
         <view a:if="{{activeTab==1}}" class="tab-content past-vouchers">
           <view a:for="{{pastVouchers}}" a:for-item="voucher" class="voucher-summary margin-bottom-20">
@@ -98,6 +99,7 @@
               buttonRightText="Settle Now"
 
               >
+              <view class="margin-y-20">
               <view class="data-pair margin-y-5">
                 <view >Payment date:</view>
                 <view  class="bold">
@@ -124,6 +126,7 @@
                 <view a:if="{{voucher.state === 'redeemed'}}" class="bold text-grey">
                   Redeemed
                 </view>
+              </view>
               </view>
             </card>
             

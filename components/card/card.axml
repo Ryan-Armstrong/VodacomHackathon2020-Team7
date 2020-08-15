@@ -1,6 +1,6 @@
 <view class="card-container">
-  <view class="card has-shadow {{!roundedCorners?'':'border-radius'}} {{class}}">
-    <view class="card-content padding-y-20">
+  <view class="card has-shadow {{!roundedCorners?'':'border-radius'}} {{class}} {{invertShadow?'inverted-shadow': ''}}">
+    <view class="card-content">
       <slot>
       </slot>
     </view>

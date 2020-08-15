@@ -1,40 +1,113 @@
-<view>
-  <view>{{retailer.title}}</view>
-  <view>Total: {{totalAmount}}</view>
-  <block a:if="{{voucherType=='advance' || voucherType=='partial'}}">
-    Settlement Period: {{settlementPeriod}}
-  </block>
-  <view>
-    <label a:for="{{voucherTypes}}" a:for-item="voucherType">
-      <button onTap="setVoucherType" data-voucherType="{{voucherType.reference}}">{{voucherType.title}}</button>
-    </label>
-  </view>
+<view class="main-container">
+  <image mode="aspectFit" src="{{retailer.banner}}" class="full-width"/>
+  <view class="content">
+    
+    <view class="title is-3">{{retailer.title}}</view>
 
-  <view>
-    <block a:if="{{voucherType=='once_off' || voucherType=='partial'}}">
-      Once Off Payments
-      <label a:for="{{onceOffVoucherPresets}}" a:for-item="onceOffPreset">
-        <button onTap="setOnceOffAmount" data-amount="{{onceOffPreset.amount}}">{{onceOffPreset.amount}}</button>
-      </label>
-    </block>
-  </view>
-  <view>
-    <block a:if="{{voucherType=='advance' || voucherType=='partial'}}">
-      <view>
-        Advance Payments
-        <label a:for="{{advanceVoucherPresets}}" a:for-item="advancePreset">
-          <button onTap="setAdvanceAmount" data-amount="{{advancePreset.amount}}">{{advancePreset.amount}}</button>
-        </label>
+    <view class="payments">
+      <view class="payment-step {{0 < currentIndex? 'completed': 0 > currentIndex ? 'next': ''}}">
+        <card >
+          <view class="padding-10 bold">
+            Select how you would like to pay
+          </view>
+          <view class="voucher-types">
+            <view a:for="{{voucherTypes}}" a:for-item="voucherType" class="padding-10 voucher-type-item" onTap="setVoucherType" data-voucherType="{{voucherType.reference}}">
+              <card roundedCorners="{{true}}">
+                
+                <image class="icon" mode="aspectFit" src="{{voucherType.icon}}"/>
+                <view>{{voucherType.title}}</view>
+                  
+              </card>
+            </view>
+          </view>
+        </card>
+        
       </view>
-      <view>
-        Settlement Periods
-        <label a:for="{{advanceSettlementPeriods}}" a:for-item="settlementPeriod">
-          <label a:if="{{settlementPeriod.visible}}">
-            <button onTap="setSettlementPeriod" data-days="{{settlementPeriod.days}}">{{settlementPeriod.days}}</button>
-          </label>
-        </label>
+
+      <view class="payment-step {{1 < currentIndex? 'completed': 1 > currentIndex ? 'next': ''}}">
+        <card>
+          <view onTap="back" class="text-red">
+            Back
+          </view>
+          <view class="voucher-types">
+            <view class="padding-10 full-width" a:if="{{voucherType=='once_off' || voucherType=='partial'}}">
+              <view class="padding-10 bold">
+                Select a voucher
+              </view>
+              <view  class="padding-10" a:for="{{onceOffVoucherPresets}}" a:for-item="onceOffPreset" onTap="setOnceOffAmount" data-amount="{{onceOffPreset.amount}}">
+                <card roundedCorners="{{true}}">
+                  <view class="voucher-display">
+                    <view class="padding-10">
+                      <view class="title is-3">
+                        R{{onceOffPreset.amount}}
+                      </view>
+                    </view>
+                    <view class="more-detail padding-10">
+                      Pay R{{onceOffPreset.amount}} get R{{onceOffPreset.amount+onceOffPreset.amount*0.1}}
+                    </view>
+                  </view>
+                </card>
+              </view>
+            </view>
+          </view>
+          
+        </card>
+        
       </view>
-    </block>
+
+      <view class="payment-step {{2 < currentIndex? 'completed': 2 > currentIndex ? 'next': ''}}">
+        <card >
+          <view onTap="back" class="text-red">
+            Back
+          </view>
+            <view class="padding-10 full-width" a:if="{{voucherType=='advance' || voucherType=='partial'}}">
+            <view class="padding-10 bold">
+              Select how much you wnat advanced
+              
+            </view>
+              <view class="voucher-types">
+                <view class="padding-10 " a:for="{{advanceVoucherPresets}}" a:for-item="advancePreset" onTap="setAdvanceAmount" data-amount="{{advancePreset.amount}}">
+                  <card roundedCorners="{{true}}">
+                    <view class="title is-3">R {{advancePreset.amount}}</view>
+                  </card>
+                </view>
+            </view>
+          </view>
+        </card>
+        
+      </view>
+
+      <view class="payment-step {{3 < currentIndex? 'completed': 3 > currentIndex ? 'next': ''}}">
+        <card >
+          <view onTap="back" class="text-red">
+            {{'<'}}Back
+          </view>
+          <view>
+            <view class="padding-10 full-width" a:if="{{voucherType=='advance' || voucherType=='partial'}}">
+              <view class="voucher-types">
+                <view class="padding-10 bold">
+                  When would you like the money to be deducted?
+                </view>
+                <view class="padding-10 peroid-type-item"  a:if="{{settlementPeriod.visible}}" a:for="{{advanceSettlementPeriods}}" a:for-item="settlementPeriod">
+                    <card roundedCorners="{{true}}">
+                      <view class="title is-3" onTap="setSettlementPeriod" data-days="{{settlementPeriod.days}}">{{settlementPeriod.days}}</view>
+                    </card>
+                </view>
+              </view>
+            </view>
+          </view>
+          
+          
+        </card>
+        
+      </view>
+    </view>
+
+
   </view>
-  <button onTap="gotoCardSelect">Continue</button>
+  <view class="footer-fixed">
+    <card invertShadow="{{true}}">
+      <view class="total-pair">Total: <view class="bold padding-x-10">R {{totalAmount}}</view></view>
+      <!-- <button class="button-primary" onTap="gotoCardSelect">Continue</button> -->
+    </card>
 </view>

@@ -8,7 +8,8 @@ Component({
     buttonLeftText:'',
     buttonRightText:'',
     identifier:'',
-    class: ''
+    class: '',
+    invertShadow: false
   },
   didMount() {},
   didUpdate() {},

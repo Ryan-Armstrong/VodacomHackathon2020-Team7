@@ -1,8 +1,12 @@
 @import "./padding-helper.acss";
+@import "./fonts.acss";
+
 page {
   flex: 1;
   display: flex;
   background: #f7f7f7;
+  font-size: 14px;
+  font-family: Roboto;
 }
 .main-container{
   width:100%;
@@ -11,14 +15,17 @@ page {
   justify-content: space-between;
   min-height: 100%;
   background: #f7f7f7;
+  position: relative;
 }
 
-/* .header{
-
-} */
 .content{
   height: 100%;
 
+}
+.footer-fixed{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .full-width{
   width: 100%;
@@ -84,4 +91,8 @@ page {
 
 .has-shadow {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.298039);
+}
+
+.has-shadow.inverted-shadow {
+  box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.298039);
 }

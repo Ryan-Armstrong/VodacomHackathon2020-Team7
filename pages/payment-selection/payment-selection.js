@@ -12,7 +12,8 @@ Page({
     settlementPeriod: null,
     onceOffAmount: 0.0,
     bonusAmount: 0.0,
-    totalAmount: 0.0
+    totalAmount: 0.0,
+    currentIndex: 0
   },
   onLoad(query) {
     this.setData({
@@ -25,8 +26,17 @@ Page({
       onceOffVoucherPresets: app.get('/once_off_voucher_presets?ids=' + this.data.retailer.once_off.presets)
     })
   },
+  back(){
+    this.setData({
+        currentIndex:0,
+        advanceAmount: 0.0,
+        onceOffAmount: 0.0,
+        bonusAmount: 0.0
+      });
+  },
   setAdvanceAmount(event) {
     this.setData({
+      currentIndex:3,
       advanceAmount: event.target.dataset.amount
     })
     this.updateTotalAmount()
@@ -38,10 +48,21 @@ Page({
     {
       bonusAmount = this.data.retailer.once_off.bonus_flat_limit
     }
-    this.setData({
+    if (this.data.voucherType == 'partial')
+    {
+      this.setData({
+      currentIndex:2,
       onceOffAmount: onceOffAmount,
       bonusAmount: bonusAmount
-    })
+      })
+    }else{
+      this.setData({
+        onceOffAmount: onceOffAmount,
+        bonusAmount: bonusAmount
+      });
+      this.gotoCardSelect();
+
+    }
     this.updateTotalAmount()
   },
   setVoucherType(event) {
@@ -49,17 +70,24 @@ Page({
     this.setData({
       voucherType: voucherType
     })
+    
     if (voucherType == 'advance')
     {
       this.setData({
+        currentIndex:2,
         onceOffAmount: 0.0,
         bonusAmount: 0.0
       })
     } else if (voucherType == 'once_off')
     {
       this.setData({
+        currentIndex:1,
         advanceAmount: 0.0,
         settlementPeriod: null
+      })
+    }else {
+      this.setData({
+        currentIndex:1,
       })
     }
     this.updateTotalAmount()
@@ -67,7 +95,8 @@ Page({
   setSettlementPeriod(event) {
     this.setData({
       settlementPeriod: event.target.dataset.days
-    })
+    });
+    this.gotoCardSelect();
   },
   updateTotalAmount() {
     this.setData({
