@@ -100,7 +100,7 @@ Page({
     })
     
   },
-  settlePayment(event){
+  settleNewestPayment(event){
     let newVoucher = this.data.newestVoucher
     app.paymentInformation = {
       retailer: newVoucher.retailer.id,
@@ -110,6 +110,21 @@ Page({
       onceOffAmount: newVoucher.pay_now.amount,
       bonusAmount: newVoucher.pay_now.bonus,
       totalAmount: newVoucher.total_amount
+    }
+    my.navigateTo({
+      url: '../card-selection/card-selection?voucherId=' + event.target.dataset.cardId
+    })
+  },
+  settlePayment(event) {
+    let voucher = app.get('/vouchers/' + event.target.dataset.cardId)
+    app.paymentInformation = {
+      retailer: voucher.retailer,
+      voucherType: 'settlement',
+      advanceAmount: voucher.advance.amount,
+      settlementPeriod: voucher.advance.settlementPeriod,
+      onceOffAmount: voucher.pay_now.amount,
+      bonusAmount: voucher.pay_now.bonus,
+      totalAmount: voucher.total_amount
     }
     my.navigateTo({
       url: '../card-selection/card-selection?voucherId=' + event.target.dataset.cardId
