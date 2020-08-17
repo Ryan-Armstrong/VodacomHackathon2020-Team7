@@ -8,22 +8,22 @@
             Please select which of your cards to use for this voucher payment.
           </view>
           <view class="voucher-types">
-            <view a:for="{{cards}}" a:for-item="card" class="padding-10 full-width" onTap="setCard" data-id="{{card.id}}">
+            <view a:for="{{cards}}" a:for-item="cardItem" class="padding-10 full-width {{cardItem.id == card.id? 'active':''}}" onTap="setCard" data-id="{{cardItem.id}}">
               <card roundedCorners="{{true}}">
                 <view class="margin-y-20">
                   <view class="data-pair margin-y-5">
-                    <view class="bold card-title">{{card.title}}</view>
+                    <view class="bold card-title">{{cardItem.title}}</view>
                   </view>
                   <view class="data-pair margin-y-5">
                     <view >Card Holder:</view>
                     <view  class="bold">
-                      {{card.holder}}
+                      {{cardItem.holder}}
                     </view>
                   </view>
                   <view class="data-pair margin-y-5">
                     <view >Card Number:</view>
                     <view  class="bold">
-                      **** **** **** {{card.number}}
+                      **** **** **** {{cardItem.number}}
                     </view>
                   </view>
                 </view>
