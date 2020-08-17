@@ -33,7 +33,7 @@
                   identifier="{{index}}"
                   onButtonLeft="onShowDetails" 
                   buttonLeftText="See Details" 
-                  onButtonRight="{{voucher.state === 'expired' || voucher.state === 'redeemed'? null: 'payNow'}}" 
+                  onButtonRight="{{voucher.state === 'expired' || voucher.state === 'redeemed'? null: 'settlePayment'}}" 
                   buttonRightText="Settle Now">
                 <view class="margin-y-20">
                 <view class="title is-3 text-red">

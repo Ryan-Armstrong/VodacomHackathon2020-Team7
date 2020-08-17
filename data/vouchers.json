@@ -11,7 +11,8 @@
     "advance": {
       "amount": 25.00,
       "due_date": "2020-07-10",
-      "paid": true
+      "paid": true,
+      "settlementPeriod": "3"
     },
     "pay_now": {
       "amount": 25.00,
@@ -30,7 +31,8 @@
     "advance": {
       "amount": 50.00,
       "due_date": "2020-07-23",
-      "paid": false
+      "paid": false,
+      "settlementPeriod": "3"
     },
     "pay_now": {
       "amount": 0.00,
@@ -49,7 +51,8 @@
     "advance": {
       "amount": 50.00,
       "due_date": "2020-07-25",
-      "paid": true
+      "paid": true,
+      "settlementPeriod": "3"
     },
     "pay_now": {
       "amount": 125.00,
@@ -68,7 +71,8 @@
     "advance": {
       "amount": 0.00,
       "due_date": null,
-      "paid": true
+      "paid": true,
+      "settlementPeriod": null
     },
     "pay_now": {
       "amount": 50.00,
@@ -87,7 +91,8 @@
     "advance": {
       "amount": 25.00,
       "due_date": "2020-09-02",
-      "paid": true
+      "paid": true,
+      "settlementPeriod": "7"
     },
     "pay_now": {
       "amount": 0.00,
