@@ -33,7 +33,7 @@
                   identifier="{{newestVoucher.id}}"
                   onButtonLeft="onShowDetails" 
                   buttonLeftText="See Details" 
-                  onButtonRight="{{newestVoucher.state === 'expired' || newestVoucher.state === 'redeemed'? null: 'settleNewestPayment'}}" 
+                  onButtonRight="{{(newestVoucher.state === 'expired' || newestVoucher.state === 'redeemed' || newestVoucher.state === 'once_off')? null: 'settleNewestPayment'}}" 
                   buttonRightText="Settle Now">
                 <view class="margin-y-20">
                 <view class="title is-3 text-red">
@@ -42,7 +42,7 @@
                   <view class="data-pair margin-y-5">
                     <view >Payment date:</view>
                     <view  class="bold">
-                      {{newestVoucher.expires_at}}
+                      {{newestVoucher.created_at}}
                     </view>
                   </view>
                   <view class="data-pair margin-y-5">
@@ -60,7 +60,7 @@
                   <view class="data-pair margin-y-5">
                     <view >Status:</view>
                     <view a:if="{{newestVoucher.state !== 'redeemed'}}" class="bold text-grey">
-                      {{newestVoucher.state === 'expired'? 'Expired at ': 'Expires at '}}{{newestVoucher.expires_at}}
+                      {{newestVoucher.state === 'expired'? 'Expired at ': 'Expires on '}}{{newestVoucher.expires_at}}
                     </view>
                     <view a:if="{{newestVoucher.state === 'redeemed'}}" class="bold text-grey">
                       Redeemed
@@ -98,9 +98,8 @@
               identifier="{{voucher.id}}"
               onButtonLeft="onShowDetails" 
               buttonLeftText="See Details" 
-              onButtonRight="{{voucher.state === 'expired' || voucher.state === 'redeemed'? null: 'settlePayment'}}" 
+              onButtonRight="{{(voucher.state === 'expired' || voucher.state === 'redeemed' || voucher.state === 'once_off')? null: 'settlePayment'}}" 
               buttonRightText="Settle Now"
-              data-voucher="{{voucher}}"
               >
               <view class="margin-y-20">
                 <view class="data-pair margin-y-5">
@@ -124,7 +123,7 @@
                 <view class="data-pair margin-y-5">
                   <view >Status:</view>
                   <view a:if="{{voucher.state !== 'redeemed'}}" class="bold text-grey">
-                    {{voucher.state === 'expired'? 'Expired at ': 'Expires at '}}{{voucher.expires_at}}
+                    {{voucher.state === 'expired'? 'Expired at ': 'Expires on '}}{{voucher.expires_at}}
                   </view>
                   <view a:if="{{voucher.state === 'redeemed'}}" class="bold text-grey">
                     Redeemed

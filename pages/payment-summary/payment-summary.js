@@ -47,6 +47,7 @@ Page({
       })
     }
     var request_body = {
+      "code": Math.random().toString(36).substring(7),
       "method": this.data.voucherType,
       "total_amount": this.data.totalAmount,
       "card": this.data.card.id,
@@ -78,12 +79,13 @@ Page({
       response_body = app.post('/vouchers', request_body)
     }
     app.setNewestVoucher(response_body)
+    console.log(app.newestVoucher)
     setTimeout(() => {
       this.setData({
         showLoadingModal: false
       })
       my.redirectTo({
-        url: '../display-voucher/display-voucher?id=' + response_body.id
+        url: '../display-voucher/display-voucher?voucherId=' + response_body.id
       })
     }, Math.random() * 6000)
   },

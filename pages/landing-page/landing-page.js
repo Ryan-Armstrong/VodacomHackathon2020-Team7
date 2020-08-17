@@ -94,11 +94,9 @@ Page({
       url: '../payment-selection/payment-selection?retailerId=' + event.target.dataset.id
     })
   },
-  onShowDetails(e){
-    console.log('raget',e.target.dataset.cardId);
-    
+  onShowDetails(event){
     my.navigateTo({
-      url: '../display-voucher/display-voucher?voucherId=' + e.target.dataset.cardId
+      url: '../display-voucher/display-voucher?voucherId=' + event.target.dataset.cardId
     })
     
   },
