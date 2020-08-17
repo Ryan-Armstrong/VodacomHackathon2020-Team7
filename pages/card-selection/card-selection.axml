@@ -12,6 +12,9 @@
               <card roundedCorners="{{true}}">
                 <view class="margin-y-20">
                   <view class="data-pair margin-y-5">
+                    <view class="bold card-title">{{card.title}}</view>
+                  </view>
+                  <view class="data-pair margin-y-5">
                     <view >Card Holder:</view>
                     <view  class="bold">
                       {{card.holder}}
@@ -21,12 +24,6 @@
                     <view >Card Number:</view>
                     <view  class="bold">
                       **** **** **** {{card.number}}
-                    </view>
-                  </view>
-                  <view class="data-pair margin-y-5">
-                    <view >Card Expiry Date:</view>
-                    <view  class="bold">
-                      {{card.expiry_date}}
                     </view>
                   </view>
                 </view>
