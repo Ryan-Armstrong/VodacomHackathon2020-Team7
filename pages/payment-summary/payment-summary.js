@@ -48,7 +48,6 @@ Page({
     }
     var request_body = {
       "code": Math.random().toString(36).substring(7),
-      "method": this.data.voucherType,
       "total_amount": this.data.totalAmount,
       "card": this.data.card.id,
       "state": this.data.paymentState,
@@ -73,10 +72,12 @@ Page({
     var response_body = null
     if (this.data.voucherType == 'settlement')
     {
+      request_body['method'] = 'advance'
       response_body = app.put('/vouchers/' + app.paymentInformation.voucherId, request_body)
       response_body['id'] = app.paymentInformation.voucherId
     } else
     {
+      request_body['method'] = 'once_off'
       response_body = app.post('/vouchers', request_body)
     }
     app.setNewestVoucher(response_body)
