@@ -1,3 +1,6 @@
-{"usingComponents": {
-    "card": "/components/card/card"
-  }}
+{
+  "usingComponents": {
+    "card": "/components/card/card",
+    "modal": "mini-antui/es/modal/index"
+  }
+}

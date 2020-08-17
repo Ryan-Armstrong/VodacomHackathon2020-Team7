@@ -78,6 +78,7 @@
 }
 
 .secondary {
+  border-radius: 10px;
   background-color: #e60000;
   color: #ffffff;
 }

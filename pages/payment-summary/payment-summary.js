@@ -11,7 +11,8 @@ Page({
     onceOffAmount: 0.0,
     bonusAmount: 0.0,
     totalAmount: 0.0,
-    paymentState: null
+    paymentState: null,
+    showLoadingModal: false
   },
   onLoad() {
     let paymentInformation = app.paymentInformation
@@ -27,6 +28,9 @@ Page({
     })
   },
   createVoucher() {
+    this.setData({
+      showLoadingModal: true
+    })
     this.performPayment(this.data.voucherType)
     var expiry_date = new Date()
     expiry_date.setMonth(expiry_date.getMonth() + 1)
@@ -55,12 +59,17 @@ Page({
     }
     let response_body = app.post('/vouchers', request_body)
     app.setNewestVoucher(response_body)
-    my.redirectTo({
-      url: '../landing-page/landing-page'
-    })
     /* my.redirectTo({
-      url: '../display-voucher/display-voucher?id=' + response_body.id
+      url: '../landing-page/landing-page'
     }) */
+    setTimeout(() => {
+      this.setData({
+        showLoadingModal: false
+      })
+      my.redirectTo({
+        url: '../display-voucher/display-voucher?id=' + response_body.id
+      })
+    }, Math.random() * 6000)
   },
   performPayment(voucherType) {
     if (voucherType == 'once_off')

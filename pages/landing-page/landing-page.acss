@@ -10,8 +10,6 @@
 .am-tabs-tab-bar-wrap, .am-tabs-content-wrap {
   height: 100%;
 }
-.past-vouchers{
-}
 
 .data-pair{
   font-size: 17px;
@@ -19,6 +17,7 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
 .voucher-summary{
   width: 100%;
 }

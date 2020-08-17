@@ -57,8 +57,14 @@
     </view>
   </view>
   <view class="footer-fixed">
-    <card invertShadow="{{true}}">
-      <button size="default" type="primary" class="secondary" onTap="createVoucher">Pay R {{totalAmount}}</button>
+    <card>
+      <button size="default" class="secondary" onTap="createVoucher">Pay R {{totalAmount}}</button>
     </card>
   </view>
+  <modal
+    show="{{showLoadingModal}}">
+    <view slot="header">Performing Payment</view>
+    Please wait while your voucher payment is completed.
+    <view style='min-height: 25px;'></view>
+  </modal>
 </view>
