@@ -23,7 +23,6 @@ App({
   vouchers: null,
   paymentInformation: null,
   newestVoucher: null,
-  paymentInformation: {},
   onLaunch(options) {
     this.card_types = card_types
     this.cards = cards

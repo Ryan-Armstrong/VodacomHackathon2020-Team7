@@ -8,23 +8,17 @@
         <card class="voucher-types padding-10 full-width">   
           <view class="title is-3">{{retailer.title}} Voucher</view>
           <view class="margin-y-20">
-            <view class="data-pair margin-y-5">
-              <view >Retailer:</view>
-              <view  class="bold">
-                {{retailer.title}}
-              </view>
-            </view>
             <view a:if="{{voucherType=='once_off' || voucherType=='partial'}}">
               <view class="data-pair margin-y-5">
                 <view >Once Off Amount:</view>
                 <view  class="bold">
-                  {{onceOffAmount}}
+                  R {{onceOffAmount}}
                 </view>
               </view>
               <view class="data-pair margin-y-5">
                 <view >Bonus Amount:</view>
                 <view  class="bold">
-                  {{bonusAmount}}
+                  R {{bonusAmount}}
                 </view>
               </view>
             </view>
@@ -32,20 +26,20 @@
               <view class="data-pair margin-y-5">
                 <view >Advance Amount:</view>
                 <view  class="bold">
-                  {{advanceAmount}}
+                  R {{advanceAmount}}
                 </view>
               </view>
               <view class="data-pair margin-y-5">
-                <view >Retailer:</view>
+                <view >Settlement Period:</view>
                 <view  class="bold">
-                  {{settlmentPeriod}}
+                  {{settlementPeriod}} Days
                 </view>
               </view>
             </view>
             <view class="data-pair margin-y-5">
               <view >Voucher Amount:</view>
               <view  class="bold">
-                {{totalAmount}}
+                R {{totalAmount}}
               </view>
             </view>
           </view>
@@ -57,9 +51,14 @@
               </view>
             </view>
           </view>
+          <view style='min-height: 150px;'></view>
         </card>
-        <button size="default" type="primary" onTap="createVoucher">Finish</button>
       </view>
     </view>
+  </view>
+  <view class="footer-fixed">
+    <card invertShadow="{{true}}">
+      <button size="default" type="primary" class="secondary" onTap="createVoucher">Pay R {{totalAmount}}</button>
+    </card>
   </view>
 </view>

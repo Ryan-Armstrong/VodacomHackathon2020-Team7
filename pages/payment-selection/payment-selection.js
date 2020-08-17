@@ -106,6 +106,7 @@ Page({
   gotoCardSelect() {
     if (this.validatePaymentOptions())
     {
+      this.updateTotalAmount()
       app.paymentInformation = {
         retailer: this.data.retailer.id,
         voucherType: this.data.voucherType,

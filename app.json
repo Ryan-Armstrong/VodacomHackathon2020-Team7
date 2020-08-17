@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/card-selection/card-selection",
     "pages/landing-page/landing-page",
     "pages/payment-summary/payment-summary",
     "pages/payment-selection/payment-selection",
+    "pages/card-selection/card-selection",
     "pages/display-voucher/display-voucher",
     "pages/message/message"
   ],
