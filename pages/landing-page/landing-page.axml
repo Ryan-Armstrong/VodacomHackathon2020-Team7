@@ -12,7 +12,7 @@
     <block a:for="{{tabs}}" a:for-item="tab">
       <tab-content key="{{index}}" >
         <view a:if="{{activeTab==0}}" class="tab-content">
-          <view a:if="{{!retailerSelection}}">
+          <view a:if="{{!retailerSelection}}" class="full-width">
             <!-- Voucher Types -->
             <view class="full-width">
               <view class="selection">
@@ -73,7 +73,7 @@
           </view>
           
         <!-- Retailers -->
-        <view a:if="{{retailerSelection}}">
+        <view a:if="{{retailerSelection}}" class="full-width">
           <view class="full-width">
               <view class="selection">
                 <view 
