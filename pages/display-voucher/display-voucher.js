@@ -17,7 +17,7 @@ Page({
     let typeNumber = 4;
     let errorCorrectionLevel = 'L';
     let qr = QRCode(typeNumber, errorCorrectionLevel);
-    qr.addData(voucher);
+    qr.addData(voucher.code);
     qr.make();
     this.setData({qrImageUrl: qr.createDataURL()});
   },
