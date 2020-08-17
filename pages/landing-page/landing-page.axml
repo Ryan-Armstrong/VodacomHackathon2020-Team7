@@ -33,7 +33,7 @@
                   identifier="{{newestVoucher.id}}"
                   onButtonLeft="onShowDetails" 
                   buttonLeftText="See Details" 
-                  onButtonRight="{{(newestVoucher.state === 'expired' || newestVoucher.state === 'redeemed' || newestVoucher.state === 'once_off')? null: 'settleNewestPayment'}}" 
+                  onButtonRight="{{newestVoucher.state === 'payment_partial_completion'? 'settleNewestPayment': null}}" 
                   buttonRightText="Settle Now">
                 <view class="margin-y-20">
                 <view class="title is-3 text-red">
@@ -98,14 +98,14 @@
               identifier="{{voucher.id}}"
               onButtonLeft="onShowDetails" 
               buttonLeftText="See Details" 
-              onButtonRight="{{(voucher.state === 'expired' || voucher.state === 'redeemed' || voucher.state === 'once_off')? null: 'settlePayment'}}" 
+              onButtonRight="{{(voucher.state === 'payment_partial_completion')? 'settlePayment': null}}" 
               buttonRightText="Settle Now"
               >
               <view class="margin-y-20">
                 <view class="data-pair margin-y-5">
                   <view >Payment date:</view>
                   <view  class="bold">
-                    {{voucher.expires_at}}
+                    {{voucher.created_at}}
                   </view>
                 </view>
                 <view class="data-pair margin-y-5">

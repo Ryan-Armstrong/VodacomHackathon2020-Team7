@@ -20,7 +20,6 @@ Page({
     activeTab: 0
   },
   onLoad(query) {
-    console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
     this.setData({ retailers: null, retailerSelection: false });
   },
   onReady() {
@@ -119,8 +118,8 @@ Page({
   settlePayment(event) {
     let voucher = app.get('/vouchers/' + event.target.dataset.cardId)
     app.paymentInformation = {
-      voucherId: newVoucher.id,
-      retailer: voucher.retailer,
+      voucherId: voucher.id,
+      retailer: voucher.retailer.id,
       voucherType: 'settlement',
       advanceAmount: voucher.advance.amount,
       settlementPeriod: voucher.advance.settlementPeriod,

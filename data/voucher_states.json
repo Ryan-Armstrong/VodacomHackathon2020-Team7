@@ -26,7 +26,7 @@
   "4": {
     "id": "4",
     "title": "Payment Settled",
-    "reference": "payment_setteld",
+    "reference": "payment_settled",
     "description": "The payment for this advance voucher has been settled."
   },
   "5": {

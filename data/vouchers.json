@@ -89,7 +89,7 @@
     "method": "advance",
     "total_amount": 25.00,
     "card": "2",
-    "state": "payment_succesful",
+    "state": "payment_partial_completion",
     "retailer": "0",
     "created_at": "12 August 2020",
     "expires_at": "12 September 2020",

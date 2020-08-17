@@ -74,12 +74,12 @@ Page({
     if (this.data.voucherType == 'settlement')
     {
       response_body = app.put('/vouchers/' + app.paymentInformation.voucherId, request_body)
+      response_body['id'] = app.paymentInformation.voucherId
     } else
     {
       response_body = app.post('/vouchers', request_body)
     }
     app.setNewestVoucher(response_body)
-    console.log(app.newestVoucher)
     setTimeout(() => {
       this.setData({
         showLoadingModal: false
