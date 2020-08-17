@@ -36,6 +36,9 @@
                   onButtonRight="{{voucher.state === 'expired' || voucher.state === 'redeemed'? null: 'payNow'}}" 
                   buttonRightText="Settle Now">
                 <view class="margin-y-20">
+                <view class="title is-3 text-red">
+                  {{newestVoucher.retailer.title}}
+                </view>
                   <view class="data-pair margin-y-5">
                     <view >Payment date:</view>
                     <view  class="bold">

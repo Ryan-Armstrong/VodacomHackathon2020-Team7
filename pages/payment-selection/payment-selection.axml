@@ -11,11 +11,11 @@
             Select how you would like to pay
           </view>
           <view class="voucher-types">
-            <view a:for="{{voucherTypes}}" a:for-item="voucherType" class="padding-10 voucher-type-item" onTap="setVoucherType" data-voucherType="{{voucherType.reference}}">
+            <view class="padding-10 voucher-type-item {{voucherType === voucherTypeItem.reference? 'active':''}}" a:for="{{voucherTypes}}" a:for-item="voucherTypeItem" onTap="setVoucherType" data-voucherType="{{voucherTypeItem.reference}}">
               <card roundedCorners="{{true}}">
                 
-                <image class="icon" mode="aspectFit" src="{{voucherType.icon}}"/>
-                <view>{{voucherType.title}}</view>
+                <image class="icon" mode="aspectFit" src="{{voucherTypeItem.icon}}"/>
+                <view>{{voucherTypeItem.title}}</view>
                   
               </card>
             </view>
@@ -34,7 +34,7 @@
               <view class="padding-10 bold">
                 Select a voucher
               </view>
-              <view  class="padding-10" a:for="{{onceOffVoucherPresets}}" a:for-item="onceOffPreset" onTap="setOnceOffAmount" data-amount="{{onceOffPreset.amount}}">
+              <view  class="padding-10 {{onceOffAmount === onceOffPreset.amount? 'active':''}}" a:for="{{onceOffVoucherPresets}}" a:for-item="onceOffPreset" onTap="setOnceOffAmount" data-amount="{{onceOffPreset.amount}}">
                 <card roundedCorners="{{true}}">
                   <view class="voucher-display">
                     <view class="padding-10">
@@ -64,7 +64,7 @@
               
             </view>
               <view class="voucher-types">
-                <view class="padding-10 " a:for="{{advanceVoucherPresets}}" a:for-item="advancePreset" onTap="setAdvanceAmount" data-amount="{{advancePreset.amount}}">
+                <view class="padding-10  {{advanceAmount === advancePreset.amount? 'active':''}}" a:for="{{advanceVoucherPresets}}" a:for-item="advancePreset" onTap="setAdvanceAmount" data-amount="{{advancePreset.amount}}">
                   <card roundedCorners="{{true}}">
                     <view class="title is-3">R {{advancePreset.amount}}</view>
                   </card>
@@ -85,9 +85,9 @@
                 <view class="padding-10 bold">
                   When would you like the money to be deducted?
                 </view>
-                <view class="padding-10 peroid-type-item"  a:if="{{settlementPeriod.visible}}" a:for="{{advanceSettlementPeriods}}" a:for-item="settlementPeriod">
+                <view class="padding-10 peroid-type-item {{settlementPeriod === settlementPeriodItem.days? 'active':''}}"  a:if="{{settlementPeriodItem.visible}}" a:for="{{advanceSettlementPeriods}}" a:for-item="settlementPeriodItem">
                     <card roundedCorners="{{true}}">
-                      <view class="title is-3" onTap="setSettlementPeriod" data-days="{{settlementPeriod.days}}">{{settlementPeriod.days}}</view>
+                      <view class="title is-3" onTap="setSettlementPeriod" data-days="{{settlementPeriodItem.days}}">{{settlementPeriodItem.days}}</view>
                     </card>
                 </view>
               </view>

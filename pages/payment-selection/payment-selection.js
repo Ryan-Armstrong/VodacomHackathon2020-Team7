@@ -7,7 +7,7 @@ Page({
     advanceVoucherPresets: null,
     advanceSettlementPeriods: null,
     onceOffVoucherPresets: null,
-    voucherType: 'once_off',
+    voucherType: '',
     advanceAmount: 0.0,
     settlementPeriod: null,
     onceOffAmount: 0.0,
