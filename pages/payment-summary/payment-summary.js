@@ -78,7 +78,6 @@ Page({
       response_body = app.post('/vouchers', request_body)
     }
     app.setNewestVoucher(response_body)
-    console.log(response_body)
     setTimeout(() => {
       this.setData({
         showLoadingModal: false
