@@ -33,7 +33,13 @@ Page({
     })
     this.performPayment(this.data.voucherType)
     var expiry_date = new Date()
-    expiry_date.setMonth(expiry_date.getMonth() + 1)
+    var current_date = new Date()
+    var dtF = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'long', day: '2-digit' })
+    current_date = dtF.formatToParts(current_date)
+    current_date = current_date[2]['value'] + ' ' + current_date[0]['value'] + ' ' + current_date[4]['value']
+    expiry_date = dtF.formatToParts(expiry_date.setMonth(expiry_date.getMonth() + 1))
+    expiry_date = expiry_date[2]['value'] + ' ' + expiry_date[0]['value'] + ' ' + expiry_date[4]['value']
+
     if (this.data.voucherType == 'settlement')
     {
       this.setData({
@@ -46,7 +52,7 @@ Page({
       "card": this.data.card.id,
       "state": this.data.paymentState,
       "retailer": this.data.retailer.id,
-      "created_at": Date.now(),
+      "created_at": current_date,
       "expires_at": expiry_date
     }
     if (this.data.voucherType == 'once_off' || this.data.voucherType == 'partial')
@@ -63,12 +69,15 @@ Page({
         paid: false
       }
     }
-    let response_body = app.post('/vouchers', request_body)
+    var response_body = null
+    if (this.data.voucherType == 'settlement')
+    {
+      response_body = app.put('/vouchers/' + app.paymentInformation.voucherId, request_body)
+    } else
+    {
+      response_body = app.post('/vouchers', request_body)
+    }
     app.setNewestVoucher(response_body)
-    console.log(response_body)
-    /* my.redirectTo({
-      url: '../landing-page/landing-page'
-    }) */
     setTimeout(() => {
       this.setData({
         showLoadingModal: false

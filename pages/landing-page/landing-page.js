@@ -105,6 +105,7 @@ Page({
   settleNewestPayment(event){
     let newVoucher = this.data.newestVoucher
     app.paymentInformation = {
+      voucherId: newVoucher.id,
       retailer: newVoucher.retailer.id,
       voucherType: 'settlement',
       advanceAmount: newVoucher.advance.amount,
@@ -120,6 +121,7 @@ Page({
   settlePayment(event) {
     let voucher = app.get('/vouchers/' + event.target.dataset.cardId)
     app.paymentInformation = {
+      voucherId: newVoucher.id,
       retailer: voucher.retailer,
       voucherType: 'settlement',
       advanceAmount: voucher.advance.amount,
