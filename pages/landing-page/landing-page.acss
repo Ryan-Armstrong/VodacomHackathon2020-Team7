@@ -32,6 +32,10 @@
   max-height: 50px;
 }
 
+.image{
+  max-height: 100px;
+}
+
 .am-tabs-bar-title {
   width:100%;
   text-align: center;

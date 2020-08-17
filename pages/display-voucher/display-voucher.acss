@@ -1,0 +1,54 @@
+.fancy .card{
+  padding-top: 80px;
+  background: url("/assets/voucher_back.svg") no-repeat;
+  background-size: 100% auto;
+  color: white;
+  /* background: linear-gradient(127.99deg, #AC0101 19.39%, #AC0101 19.39%, #E60000 90.76%); */
+}
+
+/* .card::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/voucher_back.svg");
+} */
+
+.new-title.is-3{
+  padding-top:0.2rem;
+  padding-bottom:0.2rem;
+  text-align:center;
+  font-size:0.4rem;
+  font-weight:300;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.normal{
+  font-weight: 300;
+}
+
+.head-alternate{
+  color:#990000;
+}
+
+.amount{
+  font-weight: bold;
+  text-align: right;
+  font-size: 36px;
+}
+
+.voucher-details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline
+}
+.qr{
+  text-align: center;
+}

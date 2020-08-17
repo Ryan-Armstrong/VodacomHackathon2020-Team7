@@ -1,5 +1,43 @@
-<view>
-   <view>display voucher</view>
-   <view> {{voucher.method}} </view>
-   <view a:if="qrImageUrl"><image mode="aspectFit" src="{{qrImageUrl}}"/></view>
+<view class="main-container">
+   <view class="content margin-bottom-10">
+      <view class="padding-30 fancy">
+         <card roundedCorners="{{true}}">
+            <view class="voucher-details">
+               <view>
+                  <view class="bold"> {{voucher.retailerName.title}} </view>
+                  <view> {{voucher.created_at}} </view>
+               </view>
+               <view>
+               <view class="bold amount">
+                 R {{voucher.total_amount}}
+               </view>
+                  Voucher
+               </view>
+              
+            </view>
+         </card>
+      </view>
+      <view class="normal new-title is-3 padding-20">
+        Show this to the cashier in-store and
+place your order!
+      </view>
+      <view a:if="{{voucher.code}}" class="title is-3 bold">
+         <view class="head-alternate">
+            VOUCHER CODE
+         </view>
+         <view>
+            {{voucher.code}}
+         </view>
+      </view>
+      <view class="qr" a:if="qrImageUrl"><image mode="aspectFit" src="{{qrImageUrl}}"/></view>
+      <view class="title is-3">
+        {{voucher.state != 'expired'? 'Expires at '+voucher.expires_at: "Expired"}}
+      </view>
+
+   </view>
+   <view class="footer">
+   <card invertShadow="{{true}}">
+      <button class="button-primary" onTap="toHome">Home</button>
+    </card>
+   </view>
 </view>

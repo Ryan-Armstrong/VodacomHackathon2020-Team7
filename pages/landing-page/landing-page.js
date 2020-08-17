@@ -95,6 +95,8 @@ Page({
     })
   },
   onShowDetails(e){
+    console.log('raget',e.target.dataset.cardId);
+    
     my.navigateTo({
       url: '../display-voucher/display-voucher?voucherId=' + e.target.dataset.cardId
     })

@@ -28,12 +28,12 @@
             </view>
             <!-- Newest -->
             <view a:if={{newestVoucher}} class="full-width margin-bottom-20">
-              <view class="title is-3 text-red">Recent voucher</view>
+              <view class="title is-3">Recent voucher</view>
               <card 
-                  identifier="{{index}}"
+                  identifier="{{newestVoucher.id}}"
                   onButtonLeft="onShowDetails" 
                   buttonLeftText="See Details" 
-                  onButtonRight="{{voucher.state === 'expired' || voucher.state === 'redeemed'? null: 'payNow'}}" 
+                  onButtonRight="{{newestVoucher.state === 'expired' || newestVoucher.state === 'redeemed'? null: 'payNow'}}" 
                   buttonRightText="Settle Now">
                 <view class="margin-y-20">
                 <view class="title is-3 text-red">
@@ -84,7 +84,7 @@
                   onTap="gotoPaymentSelect" 
                   data-id="{{retailer.id}}">
                   <card roundedCorners="{{true}}">
-                    <image mode="aspectFit" src="{{retailer.logo}}" class="full-width icon"/>
+                    <image mode="aspectFit" src="{{retailer.logo}}" class="full-width image"/>
                   </card>
                 </view>
               </view>
@@ -95,8 +95,8 @@
         <view a:if="{{activeTab==1}}" class="tab-content past-vouchers">
           <view a:for="{{pastVouchers}}" a:for-item="voucher" class="voucher-summary margin-bottom-20">
             <card 
-              identifier="{{index}}"
-              onButtonLeft="gotoVoucherShow" 
+              identifier="{{voucher.id}}"
+              onButtonLeft="onShowDetails" 
               buttonLeftText="See Details" 
               onButtonRight="{{voucher.state === 'expired' || voucher.state === 'redeemed'? null: 'payNow'}}" 
               buttonRightText="Settle Now"
