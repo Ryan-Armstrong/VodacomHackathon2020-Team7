@@ -77,7 +77,7 @@
       <view class="payment-step {{3 < currentIndex? 'completed': 3 > currentIndex ? 'next': ''}}">
         <card >
           <view onTap="back" class="text-red">
-            {{'<'}}Back
+            Back
           </view>
           <view>
             <view class="padding-10 full-width" a:if="{{voucherType=='advance' || voucherType=='partial'}}">

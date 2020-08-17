@@ -131,5 +131,12 @@ Page({
     my.navigateTo({
       url: '../card-selection/card-selection?voucherId=' + event.target.dataset.cardId
     })
+  },
+  back(){
+    this.setData({
+    retailerSelection: false,
+    retailers: null
+
+    });
   }
 });

@@ -74,6 +74,9 @@
           
         <!-- Retailers -->
         <view a:if="{{retailerSelection}}" class="full-width">
+          <view onTap="back" class="text-red padding-x-10">
+            Back
+          </view>
           <view class="full-width">
               <view class="selection">
                 <view 
