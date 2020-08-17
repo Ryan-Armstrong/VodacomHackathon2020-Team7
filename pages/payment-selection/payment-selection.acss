@@ -66,3 +66,7 @@
   width: 60%;
   border-left: 1px solid #EFEFEF;
 }
+
+.active .card{
+  border: 1px solid #007C92;
+}
