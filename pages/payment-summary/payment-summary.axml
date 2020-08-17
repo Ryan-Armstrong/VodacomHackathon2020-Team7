@@ -22,7 +22,7 @@
                 </view>
               </view>
             </view>
-            <view  a:if="{{voucherType=='advance' || voucherType=='partial'}}">
+            <view  a:if="{{voucherType=='advance' || voucherType=='partial' || voucherType=='settlement'}}">
               <view class="data-pair margin-y-5">
                 <view >Advance Amount:</view>
                 <view  class="bold">

@@ -34,6 +34,12 @@ Page({
     this.performPayment(this.data.voucherType)
     var expiry_date = new Date()
     expiry_date.setMonth(expiry_date.getMonth() + 1)
+    if (this.data.voucherType == 'settlement')
+    {
+      this.setData({
+        paymentState: 'payment_settled'
+      })
+    }
     var request_body = {
       "method": this.data.voucherType,
       "total_amount": this.data.totalAmount,
@@ -59,6 +65,7 @@ Page({
     }
     let response_body = app.post('/vouchers', request_body)
     app.setNewestVoucher(response_body)
+    console.log(response_body)
     /* my.redirectTo({
       url: '../landing-page/landing-page'
     }) */
