@@ -34,7 +34,8 @@ App({
     this.voucher_states = voucher_states
     this.voucherTypes = voucherTypes
     this.vouchers = vouchers
-    this.setNewestVoucher(vouchers['4'])
+    
+    this.setNewestVoucher(vouchers[Object.keys(vouchers).length-1])
   },
   onShow(options) {
     //
