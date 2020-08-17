@@ -1,11 +1,65 @@
-<view>
-  <view>Card: {{card}}</view>
-  <view>Retailer: {{retailer}}</view>
-  <view>Voucher Type: {{voucherType}}</view>
-  <view>Advance Amount: {{advanceAmount}}</view>
-  <view>Settlement Period: {{settlementPeriod}}</view>
-  <view>Once Off Amount: {{onceOffAmount}}</view>
-  <view>Bonus Amount: {{bonusAmount}}</view>
-  <view>Total Amount: {{totalAmount}}</view>
-  <button size="default" type="primary" onTap="createVoucher">Finish</button>
+
+
+<view class='main-container'>
+  <image mode="aspectFit" src="{{retailer.banner}}" class="full-width retailer-banner"/>
+  <view class="content">
+    <view class="payments">
+      <view class="payment-step">
+        <card class="voucher-types padding-10 full-width">   
+          <view class="title is-3">{{retailer.title}} Voucher</view>
+          <view class="margin-y-20">
+            <view class="data-pair margin-y-5">
+              <view >Retailer:</view>
+              <view  class="bold">
+                {{retailer.title}}
+              </view>
+            </view>
+            <view a:if="{{voucherType=='once_off' || voucherType=='partial'}}">
+              <view class="data-pair margin-y-5">
+                <view >Once Off Amount:</view>
+                <view  class="bold">
+                  {{onceOffAmount}}
+                </view>
+              </view>
+              <view class="data-pair margin-y-5">
+                <view >Bonus Amount:</view>
+                <view  class="bold">
+                  {{bonusAmount}}
+                </view>
+              </view>
+            </view>
+            <view  a:if="{{voucherType=='advance' || voucherType=='partial'}}">
+              <view class="data-pair margin-y-5">
+                <view >Advance Amount:</view>
+                <view  class="bold">
+                  {{advanceAmount}}
+                </view>
+              </view>
+              <view class="data-pair margin-y-5">
+                <view >Retailer:</view>
+                <view  class="bold">
+                  {{settlmentPeriod}}
+                </view>
+              </view>
+            </view>
+            <view class="data-pair margin-y-5">
+              <view >Voucher Amount:</view>
+              <view  class="bold">
+                {{totalAmount}}
+              </view>
+            </view>
+          </view>
+          <view class="margin-y-20">
+            <view class="data-pair margin-y-5">
+              <view >Card Number:</view>
+              <view  class="bold">
+                **** **** **** {{card.number}}
+              </view>
+            </view>
+          </view>
+        </card>
+        <button size="default" type="primary" onTap="createVoucher">Finish</button>
+      </view>
+    </view>
+  </view>
 </view>

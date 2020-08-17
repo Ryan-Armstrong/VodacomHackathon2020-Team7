@@ -1,5 +1,5 @@
 <view class="main-container">
-  <image mode="aspectFit" src="{{retailer.banner}}" class="full-width"/>
+  <image mode="aspectFit" src="{{retailer.banner}}" class="full-width retailer-banner"/>
   <view class="content">
     
     <view class="title is-3">{{retailer.title}}</view>
@@ -50,9 +50,7 @@
               </view>
             </view>
           </view>
-          
         </card>
-        
       </view>
 
       <view class="payment-step {{2 < currentIndex? 'completed': 2 > currentIndex ? 'next': ''}}">
@@ -62,7 +60,7 @@
           </view>
             <view class="padding-10 full-width" a:if="{{voucherType=='advance' || voucherType=='partial'}}">
             <view class="padding-10 bold">
-              Select how much you wnat advanced
+              Select how much you want advanced
               
             </view>
               <view class="voucher-types">
@@ -74,7 +72,6 @@
             </view>
           </view>
         </card>
-        
       </view>
 
       <view class="payment-step {{3 < currentIndex? 'completed': 3 > currentIndex ? 'next': ''}}">
@@ -96,18 +93,14 @@
               </view>
             </view>
           </view>
-          
-          
         </card>
-        
       </view>
     </view>
-
-
   </view>
+
   <view class="footer-fixed">
     <card invertShadow="{{true}}">
-      <view class="total-pair">Total: <view class="bold padding-x-10">R {{totalAmount}}</view></view>
-      <!-- <button class="button-primary" onTap="gotoCardSelect">Continue</button> -->
+      <view class="total-pair">Total: <view class="bold padding-x-10">R {{totalAmount}}</view>
     </card>
+  </view>
 </view>

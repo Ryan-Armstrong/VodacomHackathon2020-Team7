@@ -93,40 +93,40 @@
           <view a:for="{{pastVouchers}}" a:for-item="voucher" class="voucher-summary margin-bottom-20">
             <card 
               identifier="{{index}}"
-              onButtonLeft="onShowDetails" 
+              onButtonLeft="gotoVoucherShow" 
               buttonLeftText="See Details" 
               onButtonRight="{{voucher.state === 'expired' || voucher.state === 'redeemed'? null: 'payNow'}}" 
               buttonRightText="Settle Now"
 
               >
               <view class="margin-y-20">
-              <view class="data-pair margin-y-5">
-                <view >Payment date:</view>
-                <view  class="bold">
-                  {{voucher.expires_at}}
+                <view class="data-pair margin-y-5">
+                  <view >Payment date:</view>
+                  <view  class="bold">
+                    {{voucher.expires_at}}
+                  </view>
                 </view>
-              </view>
-              <view class="data-pair margin-y-5">
-                <view >Payment amount:</view>
-                <view  class="bold">
-                  {{voucher.total_amount}}
+                <view class="data-pair margin-y-5">
+                  <view >Payment amount:</view>
+                  <view  class="bold">
+                    {{voucher.total_amount}}
+                  </view>
                 </view>
-              </view>
-              <view class="data-pair margin-y-5">
-                <view >Payment method:</view>
-                <view  class="bold">
-                  {{voucherTypes[voucher.method].title}}
+                <view class="data-pair margin-y-5">
+                  <view >Payment method:</view>
+                  <view  class="bold">
+                    {{voucherTypes[voucher.method].title}}
+                  </view>
                 </view>
-              </view>
-              <view class="data-pair margin-y-5">
-                <view >Status:</view>
-                <view a:if="{{voucher.state !== 'redeemed'}}" class="bold text-grey">
-                  {{voucher.state === 'expired'? 'Expired at ': 'Expires at '}}{{voucher.expires_at}}
+                <view class="data-pair margin-y-5">
+                  <view >Status:</view>
+                  <view a:if="{{voucher.state !== 'redeemed'}}" class="bold text-grey">
+                    {{voucher.state === 'expired'? 'Expired at ': 'Expires at '}}{{voucher.expires_at}}
+                  </view>
+                  <view a:if="{{voucher.state === 'redeemed'}}" class="bold text-grey">
+                    Redeemed
+                  </view>
                 </view>
-                <view a:if="{{voucher.state === 'redeemed'}}" class="bold text-grey">
-                  Redeemed
-                </view>
-              </view>
               </view>
             </card>
             

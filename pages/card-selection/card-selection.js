@@ -3,7 +3,8 @@ const app = getApp()
 Page({
   data: {
     cards: null,
-    card: null
+    card: null,
+    currentIndex: 0
   },
   onLoad() {
     this.setData({
@@ -14,14 +15,10 @@ Page({
     this.setData({
       card: this.data.cards[event.target.dataset.id]
     })
-  },
-  gotoPaymentSummary() {
-    if (this.data.card != undefined)
-    {
-      app.paymentInformation['card'] = this.data.card
-      my.redirectTo({
-        url: '../payment-summary/payment-summary'
-      })
-    }
+    
+    app.paymentInformation['card'] = this.data.card
+    my.navigateTo({
+      url: '../payment-summary/payment-summary'
+    })
   }
 })

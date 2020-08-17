@@ -1,0 +1,76 @@
+.total-pair{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.voucher-types{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.payments{
+  margin-top: 1px;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.payment-step{
+  width:100%;
+  position: relative;
+  transition: left 0.5s;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+}
+
+.next{
+  position: absolute;
+  z-index: 2;
+  left:100%;
+}
+
+.voucher-type-item{
+  width: 44%;
+  text-align: center;
+}
+
+.peroid-type-item{
+  width: 27%;
+  text-align: center;
+}
+
+.completed{
+  position: absolute;
+  z-index: 0;
+  left: -100%;
+  box-shadow: none;
+}
+.icon{
+  max-height: 50px;
+  width: 100%;
+}
+
+.voucher-display{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-detail{
+  height: 100%;
+  text-align: center;
+  width: 60%;
+  border-left: 1px solid #EFEFEF;
+}
+
+.data-pair{
+  font-size: 17px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

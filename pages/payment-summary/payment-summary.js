@@ -1,3 +1,4 @@
+const QRCode = require('/node_modules/qrcode-generator/qrcode.js')
 const app = getApp()
 
 Page({

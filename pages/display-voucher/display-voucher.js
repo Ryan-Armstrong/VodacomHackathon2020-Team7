@@ -1,6 +1,26 @@
 const QRCode = require('/node_modules/qrcode-generator/qrcode.js');
+const app = getApp()
+
 Page({
-  data: {},
+  data: {
+    voucher: null
+  },
+  onLoad(query) {
+    this.setData({
+      voucher: app.get('/vouchers/' + query.voucherId)
+    })
+    console.log(this.data.voucher)
+  }
+})
+
+
+
+
+
+
+
+
+/* 
   onLoad() {
     let typeNumber = 4;
     let errorCorrectionLevel = 'L';
@@ -9,4 +29,4 @@ Page({
     qr.make();
     this.setData({qrImageUrl: qr.createDataURL()});
   },
-});
+  */

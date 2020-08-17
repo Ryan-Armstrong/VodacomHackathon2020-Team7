@@ -94,7 +94,6 @@ Page({
       url: '../payment-selection/payment-selection?retailerId=' + event.target.dataset.id
     })
   },
-
   onShowDetails(e){
     my.navigateTo({
       url: '../display-voucher/display-voucher?voucherId=' + e.target.dataset.cardId
@@ -104,6 +103,12 @@ Page({
   payNow(e){
     my.navigateTo({
       url: '../card-selection/card-selection?voucherId=' + e.target.dataset.cardId
+    })
+  },
+  gotoVoucherShow(event)
+  {
+    my.navigateTo({
+      url: '../display-voucher/display-voucher?voucherId=' + this.data.newestVoucher.id
     })
   }
 });

@@ -1,4 +1,5 @@
 <view>
-<view>display voucher</view>
+   <view>display voucher</view>
+   <view> {{voucher.method}} </view>
    <view a:if="qrImageUrl"><image mode="aspectFit" src="{{qrImageUrl}}"/></view>
 </view>

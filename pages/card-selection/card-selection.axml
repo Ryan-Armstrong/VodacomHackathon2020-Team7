@@ -1,15 +1,40 @@
-<view>
-  <view>
-    Card selection
-  </view>
-  <view>
-    <view a:for="{{cards}}" a:for-item="card">
-      <label>{{card.number}}</label>
-      <label>{{card.cvc}}</label>
-      <label>{{card.holder}}</label>
-      <label>{{card.expiry_date}}</label>
-      <button onTap="setCard" data-id="{{card.id}}">Select</button>
+
+<view class='main-container'>
+  <view class="content">
+    <view class="payments">
+      <view class="payment-step {{0 < currentIndex? 'completed': 0 > currentIndex ? 'next': ''}}">
+        <card>
+          <view class="padding-10 bold">
+            Please select which of your cards to use for this voucher payment.
+          </view>
+          <view class="voucher-types">
+            <view a:for="{{cards}}" a:for-item="card" class="padding-10 full-width" onTap="setCard" data-id="{{card.id}}">
+              <card roundedCorners="{{true}}">
+                <view class="margin-y-20">
+                  <view class="data-pair margin-y-5">
+                    <view >Card Holder:</view>
+                    <view  class="bold">
+                      {{card.holder}}
+                    </view>
+                  </view>
+                  <view class="data-pair margin-y-5">
+                    <view >Card Number:</view>
+                    <view  class="bold">
+                      **** **** **** {{card.number}}
+                    </view>
+                  </view>
+                  <view class="data-pair margin-y-5">
+                    <view >Card Expiry Date:</view>
+                    <view  class="bold">
+                      {{card.expiry_date}}
+                    </view>
+                  </view>
+                </view>
+              </card>
+            </view>
+          </view>
+        </card>
+      </view>
     </view>
   </view>
-  <button onTap="gotoPaymentSummary">Continue</button>
 </view>
